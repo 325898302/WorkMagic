@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run() {
             }
-        },400000000);
+        },900000000);
     }
 
     @Override

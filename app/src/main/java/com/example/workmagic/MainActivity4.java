@@ -4,17 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
 public class MainActivity4 extends AppCompatActivity {
-
+    ImageView im;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+        im = findViewById(R.id.imgeview);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        },900000000);
     }
 
 
@@ -24,13 +34,8 @@ public class MainActivity4 extends AppCompatActivity {
         return  true;
     }
 
-    Glide.with(getApplicationContext()).load(R.drawable.baloon).into(imageView);
-        new Handler().postDelayed(new Runnable() {
-        @Override
-        public void run() {
-        }
-    },400000000);
-}
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)

@@ -22,17 +22,18 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="89dp"
                             android:text="איתן הקוסם"
-                            android:layout_marginRight="135dp"
+                            android:layout_marginRight="138dp"
                             android:textColor="#E41E0F"
                             android:textSize="23dp"
                             android:textStyle="bold" />
                 </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="20dp"
-                            android:background="@drawable/baloon" />
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/balloon2"/>
 
         </LinearLayout>
 
@@ -115,6 +116,9 @@
             android:textColor="#CD8110"
             android:textStyle="bold"
             android:text="אז קדימה, זה הזמן להזמין קוסם לילדים!" />
+
+
+
 
 
 
