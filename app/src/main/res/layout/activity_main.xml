@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="#000000">
+
+        <ImageView
+            android:id="@+id/imgeview"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fire2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#000000">
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="90dp"
+            android:backgroundTint="#AA2C22"
+            android:textSize="20dp"
+            android:layout_marginRight="95dp"
+            android:textColor="#E4D00E"
+            android:id="@+id/b1"
+            android:text="תעשה לי קסם!"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="#000000">
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:text="קסמים בקלפים"
+            android:textColor="@color/black"
+            android:backgroundTint="#F8BF15"
+            android:layout_marginRight="140dp"
+            android:id="@+id/b2"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="90dp"
+            android:text="פרטים על המופע"
+            android:textColor="@color/black"
+            android:backgroundTint="#F8BF15"
+            android:layout_marginRight="95dp"
+            android:id="@+id/b3"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#010413">
+
+            <ImageView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card2"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

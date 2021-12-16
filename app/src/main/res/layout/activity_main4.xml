@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity4">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="280dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="89dp"
+                            android:text="איתן הקוסם"
+                            android:layout_marginRight="135dp"
+                            android:textColor="#E41E0F"
+                            android:textSize="23dp"
+                            android:textStyle="bold" />
+                </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/baloon" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="קוסם ליום הולדת"
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textColor="#CD8110"
+            android:text="שיהפוך את החגיגה לבלתי נשכחת!" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="#CD8110"
+            android:text="מופע הכולל קטעים מרהיבים עם שיתוף הקהל במופע." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#CD8110"
+            android:text="מופע שיגרום לילדכם להיות כוכב האירוע." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#CD8110"
+            android:text="איתן הקוסם מבטיח להעניק דקות ארוכות" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="4dp"
+            android:textColor="#CD8110"
+            android:text="של כיף וקסמים שמתאימים במיוחד לילדים" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textColor="#CD8110"
+            android:text="כדי ליצור חוויה חד פעמית." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textColor="#CD8110"
+            android:textStyle="bold"
+            android:text="אז קדימה, זה הזמן להזמין קוסם לילדים!" />
+
+
+
+
+</LinearLayout>
