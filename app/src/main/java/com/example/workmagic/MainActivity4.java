@@ -7,17 +7,30 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
 
-public class MainActivity4 extends AppCompatActivity {
+public class MainActivity4 extends AppCompatActivity implements View.OnClickListener {
     ImageView im;
+    ViewFlipper viewFlipper;
+    Button next;
+    Button previous;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         im = findViewById(R.id.imgeview);
+        viewFlipper = (ViewFlipper)findViewById(R.id.viewFlipper);
+        next = (Button) findViewById(R.id.next);
+        previous = (Button) findViewById(R.id.previous);
+
+        next.setOnClickListener(this);
+        previous.setOnClickListener(this);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -48,5 +61,15 @@ public class MainActivity4 extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == next) {
+            viewFlipper.showNext();
+        }
+        else if (v == previous) {
+            viewFlipper.showPrevious();
+        }
     }
 }
