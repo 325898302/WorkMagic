@@ -47,7 +47,7 @@
         android:layout_below="@id/ll1"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text=" קוסם ליום"
+        android:text=" קוסם ליום הולדת"
         android:textColor="#CD8110"
         android:textSize="16dp"
         android:textStyle="bold" />
@@ -151,8 +151,7 @@
             android:layout_height="200dp"
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
-            android:text="{"
-            android:textSize="20dp" />
+            android:background="@drawable/arrowr"/>
 
         <ViewFlipper
             android:id="@+id/viewFlipper"
@@ -202,8 +201,7 @@
             android:layout_height="200dp"
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
-            android:text="}"
-            android:textSize="20dp" />
+            android:background="@drawable/arrowl"/>
 
 
     </LinearLayout>
