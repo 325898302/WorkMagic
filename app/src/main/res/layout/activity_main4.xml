@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -8,202 +8,202 @@
     tools:context=".MainActivity4">
 
 
-    <LinearLayout
-        android:id="@+id/ll1"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:orientation="horizontal">
-
-
         <LinearLayout
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/ll1"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
             android:orientation="horizontal">
 
-            <TextView
+
+            <LinearLayout
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="89dp"
-                android:layout_marginRight="138dp"
-                android:text="איתן הקוסם"
-                android:textColor="#E41E0F"
-                android:textSize="23dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="89dp"
+                    android:layout_marginRight="138dp"
+                    android:text="איתן הקוסם"
+                    android:textColor="#E41E0F"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/balloon2" />
+
         </LinearLayout>
 
-        <pl.droidsonroids.gif.GifImageView
+
+        <TextView
+            android:id="@+id/t1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll1"
             android:layout_marginTop="20dp"
-            android:src="@drawable/balloon2" />
+            android:gravity="center"
+            android:text="קוסם ליום הולדת"
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t1"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="שיהפוך את החגיגה לבלתי נשכחת!"
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t2"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="מופע הכולל קטעים מרהיבים עם שיתוף הקהל במופע."
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/t1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ll1"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text=" קוסם ליום הולדת"
-        android:textColor="#CD8110"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/t4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t3"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="מופע שיגרום לילדכם להיות כוכב האירוע."
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/t2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t1"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="שיהפוך את החגיגה לבלתי נשכחת!"
-        android:textColor="#CD8110"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/t5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t4"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="איתן הקוסם מבטיח להעניק דקות ארוכות"
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/t3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t2"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="מופע הכולל קטעים מרהיבים עם שיתוף הקהל במופע."
-        android:textColor="#CD8110"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/t6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t5"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="של כיף וקסמים שמתאימים במיוחד לילדים"
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/t4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t3"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="מופע שיגרום לילדכם להיות כוכב האירוע."
-        android:textColor="#CD8110"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/t7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t6"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="כדי ליצור חוויה חד פעמית."
+            android:textColor="#CD8110"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/t5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t4"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="איתן הקוסם מבטיח להעניק דקות ארוכות"
-        android:textColor="#CD8110"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/t8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t7"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="אז קדימה, זה הזמן להזמין קוסם לילדים!"
+            android:textColor="#CD8110"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/t6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t5"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="של כיף וקסמים שמתאימים במיוחד לילדים"
-        android:textColor="#CD8110"
-        android:textSize="16dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/t7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t6"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="כדי ליצור חוויה חד פעמית."
-        android:textColor="#CD8110"
-        android:textSize="16dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/t8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t7"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="אז קדימה, זה הזמן להזמין קוסם לילדים!"
-        android:textColor="#CD8110"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t8"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:orientation="horizontal">
-
-
-        <Button
-            android:id="@+id/previous"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/arrowr"/>
-
-        <ViewFlipper
-            android:id="@+id/viewFlipper"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            >
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t8"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal">
 
 
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="270dp"
+            <Button
+                android:id="@+id/previous"
+                android:layout_width="0dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/c1" />
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/arrowr"/>
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="270dp"
+            <ViewFlipper
+                android:id="@+id/viewFlipper"
+                android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                android:gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/c2" />
+                >
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="270dp"
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/c1" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/c2" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/c3" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/c4" />
+
+            </ViewFlipper>
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="0dp"
                 android:layout_height="200dp"
-                android:gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/c3" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="270dp"
-                android:layout_height="200dp"
-                android:gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/c4" />
-
-        </ViewFlipper>
-
-        <Button
-            android:id="@+id/next"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/arrowl"/>
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/arrowl"/>
 
 
-    </LinearLayout>
+        </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
