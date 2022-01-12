@@ -8,17 +8,21 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
-
-import com.bumptech.glide.Glide;
 
 public class MainActivity4 extends AppCompatActivity implements View.OnClickListener {
     ImageView im;
     ViewFlipper viewFlipper;
+    TextView tv1;
     Button next;
     Button previous;
+    Animation scaleAnim;
+    Animation anim2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +32,11 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         viewFlipper = (ViewFlipper)findViewById(R.id.viewFlipper);
         next = (Button) findViewById(R.id.next);
         previous = (Button) findViewById(R.id.previous);
-
+        scaleAnim= AnimationUtils.loadAnimation(this,R.anim.anim1);
+        anim2= AnimationUtils.loadAnimation(this,R.anim.anim2);
         next.setOnClickListener(this);
         previous.setOnClickListener(this);
+        tv1 = (TextView) findViewById(R.id.tv1);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -38,6 +44,8 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
 
             }
         },900000000);
+
+        tv1.startAnimation(anim2);
     }
 
 
@@ -66,10 +74,14 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v == next) {
+            viewFlipper.startAnimation(scaleAnim);
             viewFlipper.showNext();
+            viewFlipper.startAnimation(anim2);
         }
         else if (v == previous) {
+            viewFlipper.startAnimation(scaleAnim);
             viewFlipper.showPrevious();
+
         }
     }
 }
