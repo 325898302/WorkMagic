@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -16,14 +18,16 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView imageView;
+    ImageView imageview;
     Button b1, b2, b3;
+    Animation anim2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageView = findViewById(R.id.imgeview);
+        imageview = findViewById(R.id.imageview);
+        anim2= AnimationUtils.loadAnimation(this,R.anim.anim2);
         b1=(Button) findViewById(R.id.b1);
         b1.setOnClickListener(this);
         b2=(Button) findViewById(R.id.b2);
@@ -31,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b3=(Button) findViewById(R.id.b3);
         b3.setOnClickListener(this);
 
-        Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageView);
+        Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageview);
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

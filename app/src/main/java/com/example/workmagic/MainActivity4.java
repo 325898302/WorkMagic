@@ -2,6 +2,7 @@ package com.example.workmagic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,46 +17,59 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 public class MainActivity4 extends AppCompatActivity implements View.OnClickListener {
-    ImageView im;
+
     ViewFlipper viewFlipper;
     TextView tv1;
-    Button next;
-    Button previous;
-    Animation scaleAnim;
+    Button left;
+    Button right;
     Animation anim2;
+
+    Dialog d;
+    Button bt1;
+    Button bt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-        im = findViewById(R.id.imgeview);
-        viewFlipper = (ViewFlipper)findViewById(R.id.viewFlipper);
-        next = (Button) findViewById(R.id.next);
-        previous = (Button) findViewById(R.id.previous);
-        scaleAnim= AnimationUtils.loadAnimation(this,R.anim.anim1);
-        anim2= AnimationUtils.loadAnimation(this,R.anim.anim2);
-        next.setOnClickListener(this);
-        previous.setOnClickListener(this);
-        tv1 = (TextView) findViewById(R.id.tv1);
+        initViews();
+        ballonAnim();
+        tv1.startAnimation(anim2);
 
+
+    }
+
+
+
+    private void initViews() {
+
+        viewFlipper = (ViewFlipper)findViewById(R.id.viewFlipper);
+
+
+        left = (Button) findViewById(R.id.left);
+        right = (Button) findViewById(R.id.right);
+
+        anim2= AnimationUtils.loadAnimation(this,R.anim.anim2);
+        left.setOnClickListener(this);
+        right.setOnClickListener(this);
+        tv1 = (TextView) findViewById(R.id.tv1);
+    }
+
+
+    private void ballonAnim() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
             }
-        },900000000);
-
-        tv1.startAnimation(anim2);
+        },999999999);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return  true;
     }
-
-
 
 
     @Override
@@ -73,13 +87,22 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if (v == next) {
-            viewFlipper.startAnimation(scaleAnim);
+        Animation in, out;
+        if (v == left) {
+            out = AnimationUtils.loadAnimation(this,R.anim.slide_out_left);
+            viewFlipper.setOutAnimation(out);
+            in = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+            viewFlipper.setInAnimation(in);
+
             viewFlipper.showNext();
-            viewFlipper.startAnimation(anim2);
+
         }
-        else if (v == previous) {
-            viewFlipper.startAnimation(scaleAnim);
+        else if (v == right){
+            out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+            viewFlipper.setOutAnimation(out);
+            in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+            viewFlipper.setInAnimation(in);
+
             viewFlipper.showPrevious();
 
         }

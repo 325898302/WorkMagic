@@ -147,7 +147,7 @@
 
 
             <Button
-                android:id="@+id/previous"
+                android:id="@+id/right"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginHorizontal="5dp"
@@ -197,7 +197,7 @@
             </ViewFlipper>
 
             <Button
-                android:id="@+id/next"
+                android:id="@+id/left"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginHorizontal="5dp"

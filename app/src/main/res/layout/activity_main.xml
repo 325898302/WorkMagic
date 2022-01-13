@@ -13,7 +13,7 @@
         android:background="#000000">
 
         <ImageView
-            android:id="@+id/imgeview"
+            android:id="@+id/imageview"
             android:layout_width="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
