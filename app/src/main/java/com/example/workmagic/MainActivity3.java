@@ -15,9 +15,11 @@ import android.widget.Toast;
 public class MainActivity3 extends AppCompatActivity implements View.OnClickListener {
     Button b1, b2, b3, b4, b5, b6;
 
-    Dialog d;
+    Dialog d1;
+    Dialog d2;
     Button bt1;
     Button bt2;
+    Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         b6=(Button) findViewById(R.id.b6);
         b6.setOnClickListener(this);
 
-        createLoginDialog();
+        createLoginDialog1();
     }
 
     @Override
@@ -46,15 +48,26 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public void createLoginDialog(){
-        d= new Dialog(this);
-        d.setContentView(R.layout.custom_layout);
-        d.setCancelable(true);
-        bt1=(Button)d.findViewById(R.id.bt1);
+    public void createLoginDialog1(){
+        d1= new Dialog(this);
+        d1.setContentView(R.layout.custom_layout);
+        d1.setCancelable(true);
+        bt1=(Button)d1.findViewById(R.id.bt1);
         bt1.setOnClickListener(this);
-        bt2=(Button)d.findViewById(R.id.bt2);
+        bt2=(Button)d1.findViewById(R.id.bt2);
         bt2.setOnClickListener(this);
-        d.show();
+        d1.show();
+
+    }
+
+
+    public void createLoginDialog2(){
+        d2= new Dialog(this);
+        d2.setContentView(R.layout.custom2);
+        d2.setCancelable(true);
+        btn1=(Button)d2.findViewById(R.id.btn1);
+        btn1.setOnClickListener(this);
+        d2.show();
 
     }
 
@@ -113,10 +126,16 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         }
 
         if(v==bt1){
-            Toast.makeText(this, "מגניב", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "יופי!", Toast.LENGTH_SHORT).show();
+            d1.dismiss();
         }
         if(v==bt2){
-            Toast.makeText(this, "לא הבנתי", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "נסביר שוב", Toast.LENGTH_SHORT).show();
+            d1.dismiss();
+            createLoginDialog2();
+        }
+        if(v==btn1){
+            d2.dismiss();
         }
     }
 }

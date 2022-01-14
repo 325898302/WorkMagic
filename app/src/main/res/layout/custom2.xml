@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="270dp"
-    android:layout_height="500dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="בשביל לראות את הסרטון"
+        android:layout_marginTop="40dp"
+        android:text="במסך יש שם של הסרטון"
         android:textColor="@color/black"
-        android:textSize="18dp"></TextView>
+        android:textSize="15dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="(מוקף בעיגול)"
+        android:textColor="@color/black"
+        android:textSize="15dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="ומתחתיו נמצאת תמונה"
+        android:textColor="@color/black"
+        android:textSize="15dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="להמחשת הסרטון"
+        android:textColor="@color/black"
+        android:textSize="15dp"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,14 +44,15 @@
         android:layout_marginTop="2dp"
         android:text="עליך ללחוץ על שם הסרטון"
         android:textColor="@color/black"
-        android:textSize="18dp"></TextView>
+        android:textSize="15dp"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="לדוגמא:"
+        android:layout_marginTop="2dp"
+        android:text="ועל ידי זה תעבור לצפות בסרטון"
+        android:textColor="@color/black"
         android:textSize="15dp"></TextView>
 
 
@@ -35,7 +60,7 @@
         android:layout_width="170dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/expl"></ImageView>
 
     <TextView
@@ -48,42 +73,13 @@
         android:textSize="15dp"></TextView>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
         <Button
-            android:id="@+id/bt1"
+            android:id="@+id/btn1"
             android:layout_width="100dp"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="24dp"
+            android:layout_gravity="center"
             android:textStyle="bold"
-            android:text="מגניב!"></Button>
-
-        <Button
-            android:id="@+id/bt2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="מה??"></Button>
-
-    </LinearLayout>
+            android:text="הבנתי"></Button>
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
