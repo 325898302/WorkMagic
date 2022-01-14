@@ -8,38 +8,6 @@
     tools:context=".MainActivity4">
 
 
-    <LinearLayout
-        android:id="@+id/ll1"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:orientation="horizontal">
-
-
-        <LinearLayout
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv1"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:layout_marginRight="138dp"
-                android:text="איתן הקוסם"
-                android:textColor="#E41E0F"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <pl.droidsonroids.gif.GifImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/balloon2" />
-
-    </LinearLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -48,6 +16,39 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        android:layout_marginRight="138dp"
+                        android:text="איתן הקוסם"
+                        android:textColor="#E41E0F"
+                        android:textSize="23dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/balloon2" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/t1"
@@ -212,8 +213,6 @@
                     android:background="@drawable/arrowl" />
 
             </LinearLayout>
-
-
 
 
         </LinearLayout>
