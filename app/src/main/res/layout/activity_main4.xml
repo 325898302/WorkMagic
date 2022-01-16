@@ -81,7 +81,20 @@
                 android:layout_below="@id/t2"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="מופע הכולל קטעים מרהיבים עם שיתוף הקהל במופע."
+                android:text="מופע הכולל קטעים מרהיבים"
+                android:textColor="#CD8110"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/t9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t2"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="עם שיתוף הקהל במופע."
                 android:textColor="#CD8110"
                 android:textSize="16dp"
                 android:textStyle="bold" />
