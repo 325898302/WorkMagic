@@ -1,9 +1,13 @@
 package com.example.workmagic;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -22,11 +26,9 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     TextView tv1;
     Button left;
     Button right;
+    Button btPhone;
     Animation anim2;
 
-    Dialog d;
-    Button bt1;
-    Button bt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +42,16 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     }
 
 
-
     private void initViews() {
 
-        viewFlipper = (ViewFlipper)findViewById(R.id.viewFlipper);
-
-
+        viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         left = (Button) findViewById(R.id.left);
-        right = (Button) findViewById(R.id.right);
-
-        anim2= AnimationUtils.loadAnimation(this,R.anim.anim2);
         left.setOnClickListener(this);
+        right = (Button) findViewById(R.id.right);
         right.setOnClickListener(this);
+        btPhone = (Button) findViewById(R.id.btPhone);
+        btPhone.setOnClickListener(this);
+        anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2);
         tv1 = (TextView) findViewById(R.id.tv1);
     }
 
@@ -62,23 +62,22 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
             public void run() {
 
             }
-        },999999999);
+        }, 999999999);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return  true;
+        return true;
     }
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         int id = item.getItemId();
-        if(id==R.id.rash) {
-            Intent intent=new Intent(this,MainActivity.class);
+        if (id == R.id.rash) {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
 
@@ -88,16 +87,27 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         Animation in, out;
+
+        if (v == btPhone) {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_CALL);
+            Uri data = Uri.parse("tel:" + "0503441919");
+            intent.setData(data);
+
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            startActivity(intent);
+        }
+
         if (v == left) {
-            out = AnimationUtils.loadAnimation(this,R.anim.slide_out_left);
+            out = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
             viewFlipper.setOutAnimation(out);
             in = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
             viewFlipper.setInAnimation(in);
-
             viewFlipper.showNext();
 
-        }
-        else if (v == right){
+        } else if (v == right) {
             out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
             viewFlipper.setOutAnimation(out);
             in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
