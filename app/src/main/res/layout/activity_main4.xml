@@ -262,11 +262,12 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/phone2" />
+                    android:id="@+id/imPhone"
+                    android:src="@drawable/phone" />
 
                 <Button
                     android:id="@+id/btPhone"
@@ -279,31 +280,48 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="40"
                     android:text="0503407888"
+                    android:textSize="16dp"
+                    android:textStyle="bold">
+                </Button>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/im"
+                    android:src="@drawable/whatsapp" />
+
+                <Button
+                    android:id="@+id/b1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:shadowColor="#cf1d1d"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="40"
+                    android:text="שלח הודעה"
+                    android:textSize="16dp"
                     android:textStyle="bold">
 
                 </Button>
             </LinearLayout>
 
-
         </LinearLayout>
+
+
+
+
     </LinearLayout>
 </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

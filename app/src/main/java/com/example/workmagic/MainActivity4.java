@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.bumptech.glide.Glide;
+
 public class MainActivity4 extends AppCompatActivity implements View.OnClickListener {
 
     ViewFlipper viewFlipper;
@@ -29,16 +31,18 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     Button right;
     Button btPhone;
     Animation anim2;
+    ImageView imAnim;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+        imAnim = findViewById(R.id.imageview);
         initViews();
         ballonAnim();
+        phone();
         tv1.startAnimation(anim2);
-
 
     }
 
@@ -58,6 +62,14 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
 
 
     private void ballonAnim() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }, 999999999);
+    }
+    private void phone() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -99,8 +111,6 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
-
-
         }
 
         if (v == left) {
