@@ -18,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class MainActivity4 extends AppCompatActivity implements View.OnClickListener {
@@ -89,15 +90,17 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         Animation in, out;
 
         if (v == btPhone) {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_CALL);
-            Uri data = Uri.parse("tel:" + "0503441919");
-            intent.setData(data);
 
+            Intent intent = new Intent();
+            Uri data = Uri.parse("tel:" + "0503407888");
+            intent.setData(data);
+            intent.setAction(Intent.ACTION_DIAL);
+            startActivity(intent);
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
-            startActivity(intent);
+
+
         }
 
         if (v == left) {

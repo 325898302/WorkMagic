@@ -249,32 +249,36 @@
                 android:text="צור קשר"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="#F60808"
+                android:textColor="#F81717"
                 android:textSize="25dp"
                 android:textStyle="bold|italic">
 
             </TextView>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="64dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="64dp"
-                    android:layout_marginRight="100dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/phone2" />
 
                 <Button
+                    android:id="@+id/btPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:id="@+id/btPhone"
+                    android:layout_gravity="center"
                     android:background="@android:color/transparent"
+                    android:shadowColor="#cf1d1d"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="40"
                     android:text="0503407888"
-                    android:layout_marginRight="10dp"
                     android:textStyle="bold">
 
                 </Button>

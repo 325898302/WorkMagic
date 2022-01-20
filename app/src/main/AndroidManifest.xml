@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.workmagic">
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -12,7 +13,14 @@
         android:theme="@style/Theme.WorkMagic">
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity3"
             android:exported="false" />
@@ -21,13 +29,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity4"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
     </application>
 
 </manifest>
