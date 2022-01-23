@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,12 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     Button btPhone;
     Animation anim2;
     ImageView imAnim;
-
+    Button btWhatsApp;
+    Dialog dialog1;
+    EditText ed1;
+    EditText ed2;
+    EditText ed3;
+    EditText ed4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +58,18 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         left = (Button) findViewById(R.id.left);
         left.setOnClickListener(this);
+        btWhatsApp = (Button) findViewById(R.id.btWhatsApp);
+        btWhatsApp.setOnClickListener(this);
         right = (Button) findViewById(R.id.right);
         right.setOnClickListener(this);
         btPhone = (Button) findViewById(R.id.btPhone);
         btPhone.setOnClickListener(this);
         anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2);
         tv1 = (TextView) findViewById(R.id.tv1);
+        ed1 = (EditText) findViewById(R.id.ed1);
+        ed2 = (EditText) findViewById(R.id.ed2);
+        ed3 = (EditText) findViewById(R.id.ed3);
+        ed4 = (EditText) findViewById(R.id.ed4);
     }
 
 
@@ -82,6 +94,13 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void createLoginDialog1(){
+        dialog1= new Dialog(this);
+        dialog1.setContentView(R.layout.dialogwhatsapp);
+        dialog1.setCancelable(true);
+        dialog1.show();
     }
 
 
@@ -111,6 +130,10 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
+        }
+
+        if (v == btWhatsApp) {
+            createLoginDialog1();
         }
 
         if (v == left) {

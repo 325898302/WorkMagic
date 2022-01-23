@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="תכתוב את הפרטים לגבי המופעה">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="ושלח אותם אלי בווטסאפ">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="ואני אחזור אליך">
+    </TextView>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:hint="שם:"
+        android:text=""
+        android:id="@+id/ed1">
+    </EditText>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:hint="הסיבה למסיבה:"
+        android:text=""
+        android:id="@+id/ed2">
+    </EditText>
+
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="כמות משתתפים:"
+        android:text=""
+        android:id="@+id/ed3">
+    </EditText>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="גיל החגיגה:"
+        android:text=""
+        android:id="@+id/ed4">
+    </EditText>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="מספר טלפון:"
+        android:text=""
+        android:id="@+id/ed5">
+    </EditText>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
