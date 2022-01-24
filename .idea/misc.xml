@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2546875" />
+        <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/drawable/custom_button.xml" value="0.20185185185185187" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/drawable/ic1.xml" value="0.2546875" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/drawable/ic2.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/drawable/ic3.xml" value="0.18425925925925926" />
@@ -36,7 +37,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.19791666666666666" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

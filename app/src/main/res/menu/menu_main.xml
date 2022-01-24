@@ -9,8 +9,9 @@
 
     <item
         android:id="@+id/phone"
-        android:title="0503407888"
-        android:icon="@drawable/ic_call"
-        app:showAsAction="ifRoom"/>
+        android:title="צור קשר"
+        android:icon="@drawable/contactphone"
+        app:showAsAction="always"
+        />
 
 </menu>

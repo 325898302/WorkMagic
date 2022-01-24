@@ -3,13 +3,17 @@ package com.example.workmagic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity3 extends AppCompatActivity implements View.OnClickListener {
@@ -20,6 +24,9 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
     Button bt1;
     Button bt2;
     Button btn1;
+    int battery=0;
+
+    BroadCastBattery broadCastBattery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +45,34 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         b6=(Button) findViewById(R.id.b6);
         b6.setOnClickListener(this);
 
+        broadCastBattery=new BroadCastBattery();
+
         createLoginDialog1();
     }
+
+
+    private class BroadCastBattery extends BroadcastReceiver
+    {
+        public void onReceive(Context context, Intent intent) {
+            battery = intent.getIntExtra("level", 0);
+            if (battery<10) {
+                Toast.makeText(context, String.valueOf(battery) + "סוללה חלשה", Toast.LENGTH_SHORT).show();
+                battery=100;
+            }
+        }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver(broadCastBattery,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(broadCastBattery);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -79,6 +112,10 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         int id = item.getItemId();
         if(id==R.id.rash) {
             Intent intent=new Intent(this,MainActivity.class);
+            startActivity(intent);
+        }
+        if(id==R.id.phone) {
+            Intent intent=new Intent(this,MainActivity4.class);
             startActivity(intent);
         }
 

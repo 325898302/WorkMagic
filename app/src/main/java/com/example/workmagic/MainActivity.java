@@ -56,7 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         super.onOptionsItemSelected(item);
         int id = item.getItemId();
-
+        if(id==R.id.phone) {
+            Intent intent=new Intent(this,MainActivity4.class);
+            startActivity(intent);
+        }
 
         return true;
     }

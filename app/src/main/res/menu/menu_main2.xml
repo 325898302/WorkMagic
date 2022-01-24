@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/phone2"
-        android:title="0503407888"
-        android:icon="@drawable/ic_call"
+        android:id="@+id/phone"
+        android:title="צור קשר"
+        android:icon="@drawable/contactphone"
         app:showAsAction="always"
         />
 </menu>

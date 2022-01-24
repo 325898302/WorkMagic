@@ -15,8 +15,8 @@
         <ImageView
             android:id="@+id/imageview"
             android:layout_width="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:src="@drawable/fire2" />
     </LinearLayout>
 
@@ -26,45 +26,45 @@
         android:background="#000000">
 
         <Button
+            android:id="@+id/b1"
             android:layout_width="200dp"
             android:layout_height="90dp"
-            android:backgroundTint="#AA2C22"
-            android:textSize="20dp"
             android:layout_marginRight="95dp"
-            android:textColor="#E4D00E"
-            android:id="@+id/b1"
+            android:backgroundTint="#AA2C22"
             android:text="תעשה לי קסם!"
-            android:textStyle="bold"/>
+            android:textColor="#E4D00E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:orientation="vertical"
-        android:background="#000000">
+        android:background="#000000"
+        android:orientation="vertical">
 
         <Button
+            android:id="@+id/b2"
             android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_marginTop="40dp"
+            android:layout_marginRight="140dp"
+            android:backgroundTint="#F8BF15"
             android:text="קסמים בקלפים"
             android:textColor="@color/black"
-            android:backgroundTint="#F8BF15"
-            android:layout_marginRight="140dp"
-            android:id="@+id/b2"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <Button
+            android:id="@+id/b3"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_marginTop="90dp"
+            android:layout_marginRight="95dp"
+            android:backgroundTint="#F8BF15"
             android:text="פרטים על המופע"
             android:textColor="@color/black"
-            android:backgroundTint="#F8BF15"
-            android:layout_marginRight="95dp"
-            android:id="@+id/b3"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -72,11 +72,10 @@
         android:layout_height="match_parent"
         android:background="#010413">
 
-            <ImageView
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/card2"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card2" />
 
     </LinearLayout>
 

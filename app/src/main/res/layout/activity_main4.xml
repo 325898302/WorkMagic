@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ll1"
             android:gravity="center"
-            android:text="קוסם ליום הולדת"
+            android:text="קוסם ליום הולדת ומסיבות"
             android:textColor="#CD8110"
             android:textSize="16dp"
             android:textStyle="bold" />
@@ -318,9 +318,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
-
 
     </LinearLayout>
 </ScrollView>
