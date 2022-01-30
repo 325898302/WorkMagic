@@ -116,6 +116,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         }
         if(id==R.id.phone) {
             Intent intent=new Intent(this,MainActivity4.class);
+            intent.putExtra("menu", true);//
             startActivity(intent);
         }
 

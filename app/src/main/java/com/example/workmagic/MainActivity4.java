@@ -1,5 +1,6 @@
 package com.example.workmagic;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -52,6 +53,13 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         phone();
         tv1.startAnimation(anim2);
 
+        if(((Boolean) getIntent().getExtras().get("menu"))){
+            sv.post(new Runnable() {
+                public void run() {
+                    sv.fullScroll(View.FOCUS_DOWN);
+                }
+            });
+        }
 
     }
 
@@ -136,6 +144,7 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         }
         if(id==R.id.phone) {
             Intent intent=new Intent(this,MainActivity4.class);
+            intent.putExtra("menu", true);//
             startActivity(intent);
         }
 

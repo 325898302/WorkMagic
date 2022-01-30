@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
         if(id==R.id.phone) {
             Intent intent=new Intent(this,MainActivity4.class);
+            intent.putExtra("menu", true);
             startActivity(intent);
         }
 
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (v==b3){
             Intent intent= new Intent(MainActivity. this, MainActivity4.class);
+            intent.putExtra("menu", false);//
             startActivity(intent);
         }
     }
