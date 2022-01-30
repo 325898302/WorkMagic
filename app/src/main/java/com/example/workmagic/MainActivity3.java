@@ -56,7 +56,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         public void onReceive(Context context, Intent intent) {
             battery = intent.getIntExtra("level", 0);
             if (battery<10) {
-                Toast.makeText(context, String.valueOf(battery) + "סוללה חלשה", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, String.valueOf(battery) + " סוללה חלשה", Toast.LENGTH_SHORT).show();
                 battery=100;
             }
         }

@@ -18,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -36,6 +37,7 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     Button btWhatsApp;
     Dialog dialog1;
     EditText ed1, ed2, ed3, ed4, ed5, ed6;
+    ScrollView sv;
 
     Button btSMS;
 
@@ -44,10 +46,13 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         imAnim = findViewById(R.id.imageview);
+        sv = findViewById(R.id.sv);
         initViews();
         ballonAnim();
         phone();
         tv1.startAnimation(anim2);
+
+
     }
 
 
