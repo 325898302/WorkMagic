@@ -4,6 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity2"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="תחשוב על מספר"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:textSize="30dp"
+        android:textColor="#E18907"
+        android:id="@+id/tv1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="בין 1 ל- 31"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="30dp"
+        android:textColor="#E18907"
+        android:id="@+id/tv2"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ואנחנו נגלה מה בחרת!"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:textColor="#E18907"
+        android:id="@+id/tv3"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/number31"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="חשבתי"
+        android:textStyle="bold"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        android:id="@+id/think"
+        />
+
 
 </LinearLayout>

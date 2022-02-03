@@ -165,6 +165,7 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         String text="";
 
         if (v== btSMS){
+            
             st1= ed1.getText().toString();
             st2= ed2.getText().toString();
             st3= ed3.getText().toString();

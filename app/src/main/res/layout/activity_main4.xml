@@ -32,10 +32,14 @@
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="80dp"
-                    android:layout_marginRight="138dp"
+                    android:layout_marginRight="128dp"
+                    android:shadowColor="#1DCFC9"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="10"
                     android:text="איתן הקוסם"
                     android:textColor="#E41E0F"
-                    android:textSize="23dp"
+                    android:textSize="28dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -187,7 +191,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:scaleType="fitXY"
-                    android:src="@drawable/c1" />
+                    android:src="@drawable/show1" />
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -195,7 +199,7 @@
                     android:layout_height="200dp"
                     android:gravity="center"
                     android:scaleType="fitXY"
-                    android:src="@drawable/c2" />
+                    android:src="@drawable/show2" />
 
                 <ImageView
                     android:id="@+id/imageView3"
@@ -203,7 +207,7 @@
                     android:layout_height="200dp"
                     android:gravity="center"
                     android:scaleType="fitXY"
-                    android:src="@drawable/c3" />
+                    android:src="@drawable/show3" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -211,7 +215,63 @@
                     android:layout_height="200dp"
                     android:gravity="center"
                     android:scaleType="fitXY"
-                    android:src="@drawable/c4" />
+                    android:src="@drawable/show4" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/show5" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/show6" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/show7" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/show8" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/show9" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/show10" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="270dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/show11" />
 
             </ViewFlipper>
 

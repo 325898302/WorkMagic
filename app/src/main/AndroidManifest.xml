@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkMagic">
+        <activity android:name=".MagicCard"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -20,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity3"
             android:exported="false" />
@@ -30,8 +30,6 @@
         <activity
             android:name=".MainActivity4"
             android:exported="false" />
-
-
     </application>
 
 </manifest>
