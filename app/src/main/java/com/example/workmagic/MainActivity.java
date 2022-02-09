@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b2.setOnClickListener(this);
         b3=(Button) findViewById(R.id.b3);
         b3.setOnClickListener(this);
+
+
 
         Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageview);
 

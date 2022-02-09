@@ -28,6 +28,12 @@
         android:textColor="#E18907"
         android:id="@+id/tv2"
         />
+    <TableLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/tbl">
+
+    </TableLayout>
 
 
 
