@@ -15,6 +15,10 @@ public class MagicCard extends AppCompatActivity {
         setContentView(R.layout.activity_magic_card);
         tbl= findViewById(R.id.tbl);
         MagicBoard mb = new MagicBoard(1);
+        TableLayout t = mb.fillTable();
+
+
+
 
 
     }
