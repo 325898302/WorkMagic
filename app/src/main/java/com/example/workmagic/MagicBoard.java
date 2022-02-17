@@ -16,25 +16,6 @@ public class MagicBoard extends AppCompatActivity {
         return table;
     }
 
-    public MagicBoard(int rashi) {
-        this.rashi = rashi;
-        int x = rashi;
-        int count = 0;
-
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                table[i][j] = x;
-                x++;
-                count++;
-
-                if (count % rashi == 0) {
-                    x += rashi;
-                }
-
-            }
-        }
-
-    }
 
     public TableLayout fillTable() {
         TableLayout tavla = new TableLayout(this);

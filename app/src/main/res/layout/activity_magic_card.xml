@@ -4,37 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MagicCard"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MagicCard">
 
     <TextView
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="האם המספר שלך"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        android:textSize="30dp"
+        android:text="האם המספר שלך"
         android:textColor="#E18907"
-        android:id="@+id/tv1"
-        />
+        android:textSize="30dp" />
 
     <TextView
+        android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="מופיע פה?"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:textSize="30dp"
+        android:text="מופיע פה?"
         android:textColor="#E18907"
-        android:id="@+id/tv2"
-        />
+        android:textSize="30dp" />
+
     <TableLayout
+        android:id="@+id/tbl"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/tbl">
+        android:layout_height="200dp">
+
 
     </TableLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt1"
+            android:text="כן"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt2"
+            android:text="לא"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
