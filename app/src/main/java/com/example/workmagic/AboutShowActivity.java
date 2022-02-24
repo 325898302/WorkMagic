@@ -1,6 +1,5 @@
 package com.example.workmagic;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -24,9 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.bumptech.glide.Glide;
-
-public class MainActivity4 extends AppCompatActivity implements View.OnClickListener {
+public class AboutShowActivity extends AppCompatActivity implements View.OnClickListener {
 
     ViewFlipper viewFlipper;
     TextView tv1;
@@ -45,7 +42,7 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
+        setContentView(R.layout.activity_aboutshow);
         imAnim = findViewById(R.id.imageview);
         sv = findViewById(R.id.sv);
         initViews();
@@ -62,7 +59,6 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
         }
 
     }
-
 
     private void initViews() {
 
@@ -99,7 +95,7 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_nomain, menu);
         return true;
     }
 
@@ -143,7 +139,7 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
         }
         if(id==R.id.phone) {
-            Intent intent=new Intent(this,MainActivity4.class);
+            Intent intent=new Intent(this, AboutShowActivity.class);
             intent.putExtra("menu", true);//
             startActivity(intent);
         }
@@ -183,7 +179,7 @@ public class MainActivity4 extends AppCompatActivity implements View.OnClickList
             }
             else
             {
-                Toast.makeText(MainActivity4.this, "Whatsapp is not installed!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutShowActivity.this, "Whatsapp is not installed!", Toast.LENGTH_SHORT).show();
             }
         }
 

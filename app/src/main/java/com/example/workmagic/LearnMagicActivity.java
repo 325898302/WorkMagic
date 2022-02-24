@@ -13,10 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity3 extends AppCompatActivity implements View.OnClickListener {
+public class LearnMagicActivity extends AppCompatActivity implements View.OnClickListener {
     Button b1, b2, b3, b4, b5, b6;
 
     Dialog d1;
@@ -31,7 +30,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_learnmagic);
         b1=(Button) findViewById(R.id.b1);
         b1.setOnClickListener(this);
         b2=(Button) findViewById(R.id.b2);
@@ -76,7 +75,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_nomain, menu);
         return  true;
     }
 
@@ -115,7 +114,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
         }
         if(id==R.id.phone) {
-            Intent intent=new Intent(this,MainActivity4.class);
+            Intent intent=new Intent(this, AboutShowActivity.class);
             intent.putExtra("menu", true);//
             startActivity(intent);
         }

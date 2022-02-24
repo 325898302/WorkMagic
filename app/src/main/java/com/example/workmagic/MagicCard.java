@@ -35,23 +35,27 @@ public class MagicCard extends AppCompatActivity implements View.OnClickListener
     }
 
     private void drawTable() {
-        TableLayout table = (TableLayout) this.findViewById(R.id.tbl);
         board[numOfBoard] = new Board(firstNum);
         boardNums = board[numOfBoard].getBoardNums();
+
+        TextView tv;
         for (int i = 0; i < 4; i++) {
             TableRow row = (TableRow) LayoutInflater.from(this).inflate(R.layout.row_layout, null);
+
             int j = 0;
 
-            ((TextView) row.findViewById(R.id.tv1)).setText(boardNums[i][j]);
+
+            ((TextView) row.findViewById(R.id.tv1)).setText("  " + boardNums[i][j]);
             j++;
-            ((TextView) row.findViewById(R.id.tv2)).setText(boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.tv2)).setText("   " + boardNums[i][j]);
             j++;
-            ((TextView) row.findViewById(R.id.tv3)).setText(boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.tv3)).setText("   " + boardNums[i][j]);
             j++;
-            ((TextView) row.findViewById(R.id.tv4)).setText(boardNums[i][j]);
-            table.addView(row);
+            ((TextView) row.findViewById(R.id.tv4)).setText("   " + boardNums[i][j]);
+            tbl.addView(row);
         }
-        table.requestLayout();
+
+        tbl.requestLayout();
     }
 
     @Override
@@ -63,6 +67,7 @@ public class MagicCard extends AppCompatActivity implements View.OnClickListener
             if (numOfBoard < 3) {
                 numOfBoard++;
                 firstNum *= 2;
+                tbl.removeAllViews();
                 drawTable();
             }
         }
@@ -73,6 +78,7 @@ public class MagicCard extends AppCompatActivity implements View.OnClickListener
             if (numOfBoard < 3) {
                 numOfBoard++;
                 firstNum *= 2;
+                tbl.removeAllViews();
                 drawTable();
             }
         }

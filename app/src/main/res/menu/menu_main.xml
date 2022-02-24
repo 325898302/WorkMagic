@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <item
-        android:id="@+id/rash"
-        android:title="ראשי"
-        app:showAsAction="always"/>
-
     <item
         android:id="@+id/phone"
         android:title="צור קשר"
@@ -14,4 +8,10 @@
         app:showAsAction="always"
         />
 
+    <item
+        android:id="@+id/music"
+        android:title="הדלקה/כיבוי"
+        android:icon="@drawable/contactphone"
+        app:showAsAction="always"
+        />
 </menu>

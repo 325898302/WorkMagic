@@ -7,15 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
+public class MakeMagicActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button think;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        think=(Button) findViewById(R.id.think);
+        setContentView(R.layout.activity_makemagic);
+        think= findViewById(R.id.think);
         think.setOnClickListener(this);
 
     }
@@ -23,7 +23,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if(v==think){
-            Intent intent= new Intent(MainActivity2. this, MagicCard.class);
+            Intent intent= new Intent(MakeMagicActivity. this, MagicCard.class);
             startActivity(intent);
         }
     }

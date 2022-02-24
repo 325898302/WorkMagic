@@ -22,14 +22,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity3"
+            android:name=".LearnMagicActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".MakeMagicActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity4"
+            android:name=".AboutShowActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
