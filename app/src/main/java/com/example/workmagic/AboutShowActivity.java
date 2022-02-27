@@ -30,7 +30,6 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     Button left;
     Button right;
     Button btPhone;
-    Animation anim2;
     ImageView imAnim;
     Button btWhatsApp;
     Dialog dialog1;
@@ -43,12 +42,10 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutshow);
-        imAnim = findViewById(R.id.imageview);
-        sv = findViewById(R.id.sv);
         initViews();
         ballonAnim();
         phone();
-        tv1.startAnimation(anim2);
+
 
         if(((Boolean) getIntent().getExtras().get("menu"))){
             sv.post(new Runnable() {
@@ -61,7 +58,8 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initViews() {
-
+        imAnim = findViewById(R.id.imageview);
+        sv = findViewById(R.id.sv);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         left = (Button) findViewById(R.id.left);
         left.setOnClickListener(this);
@@ -71,7 +69,6 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         right.setOnClickListener(this);
         btPhone = (Button) findViewById(R.id.btPhone);
         btPhone.setOnClickListener(this);
-        anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2);
         tv1 = (TextView) findViewById(R.id.tv1);
     }
 
