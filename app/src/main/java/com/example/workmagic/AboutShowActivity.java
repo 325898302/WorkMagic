@@ -58,7 +58,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initViews() {
-        imAnim = findViewById(R.id.imageview);
+        imAnim = findViewById(R.id.imageFire);
         sv = findViewById(R.id.sv);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         left = (Button) findViewById(R.id.left);

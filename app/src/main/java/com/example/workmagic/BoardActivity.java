@@ -1,18 +1,18 @@
 package com.example.workmagic;
 
-public class Board {
+public class BoardActivity {
     private int firstNum;
     private int[][] boardNums;
     private boolean isNumInBoard;
 
-    public Board(int firstNum) {
+    public BoardActivity(int firstNum) {
         this.firstNum = firstNum;
         this.boardNums = new int[4][4];
         this.isNumInBoard = false;
-        fillBuild();
+        BuildTable();
     }
 
-    private int[][] fillBuild() {
+    private int[][] BuildTable() {
         int x = firstNum;
         int count = 0;
 

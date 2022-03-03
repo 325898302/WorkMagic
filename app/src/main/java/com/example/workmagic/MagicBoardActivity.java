@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MagicBoard extends AppCompatActivity {
+public class MagicBoardActivity extends AppCompatActivity {
     private int rashi;
     private int[][] table = new int[4][4];
 

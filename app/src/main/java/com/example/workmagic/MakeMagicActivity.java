@@ -23,7 +23,7 @@ public class MakeMagicActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if(v==think){
-            Intent intent= new Intent(MakeMagicActivity. this, MagicCard.class);
+            Intent intent= new Intent(MakeMagicActivity. this, MagicCardActivity.class);
             startActivity(intent);
         }
     }

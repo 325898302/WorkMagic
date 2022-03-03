@@ -19,7 +19,7 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView imageview;
+    ImageView imageFire;
     Button b1, b2, b3;
     Animation anim2;
     int x;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageview = findViewById(R.id.imageview);
+        imageFire = findViewById(R.id.imageFire);
         anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2);
         b1 = (Button) findViewById(R.id.b1);
         b1.setOnClickListener(this);
@@ -38,17 +38,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b3 = (Button) findViewById(R.id.b3);
         b3.setOnClickListener(this);
 
-        player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
-        player.setLooping(true);
-        player.start();
 
-        Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageview);
+
+        Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageFire);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
             }
         }, 900000000);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
+        player.setLooping(true);
+        player.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        player.release();
+        player = null;
+        Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -77,8 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 x=1;
                 item.setIcon(R.drawable.musicyes);
             }
-
-            if (player != null && x!=1) {
+            else {
                 player.release();
                 player = null;
                 Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
