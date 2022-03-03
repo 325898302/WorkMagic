@@ -23,9 +23,6 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
     Button bt1;
     Button bt2;
     Button btn1;
-    int battery=0;
-
-    BroadCastBattery broadCastBattery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,32 +41,7 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
         b6=(Button) findViewById(R.id.b6);
         b6.setOnClickListener(this);
 
-        broadCastBattery=new BroadCastBattery();
-
         createLoginDialog1();
-    }
-
-
-    private class BroadCastBattery extends BroadcastReceiver
-    {
-        public void onReceive(Context context, Intent intent) {
-            battery = intent.getIntExtra("level", 0);
-            if (battery<10) {
-                Toast.makeText(context, String.valueOf(battery) + " סוללה חלשה", Toast.LENGTH_SHORT).show();
-                battery=100;
-            }
-        }
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        registerReceiver(broadCastBattery,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        unregisterReceiver(broadCastBattery);
     }
 
 
