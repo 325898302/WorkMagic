@@ -74,11 +74,10 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
                 drawTable();
             } else {
 
-//                Intent intent = new Intent(this, NumDiscoveryActivity.class);
-//                intent.putExtra("selectNum", selectNum);
-//                startActivity(intent);
+                Intent intent = new Intent(this, NumDiscoveryActivity.class);
+                intent.putExtra("selectNum", selectNum);
+                startActivity(intent);
 
-                Toast.makeText(this, " " + selectNum, Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -93,9 +92,9 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
                 tbl.removeAllViews();
                 drawTable();
             } else {
-
-
-                Toast.makeText(this, " " + selectNum, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, NumDiscoveryActivity.class);
+                intent.putExtra("selectNum", selectNum);
+                startActivity(intent);
             }
         }
 

@@ -25,10 +25,9 @@ public class NumDiscoveryActivity extends AppCompatActivity {
         numOfUse = (TextView) findViewById(R.id.numOfUse);
         imGifFirework = findViewById(R.id.imGifFirework);
 
-//        Intent intent = getIntent();
-//        String strNumOfUse = intent.getExtras().getString("selectNum");
-//        Toast.makeText(this, " yff " + strNumOfUse, Toast.LENGTH_SHORT).show();
-//        numOfUse.setText("welcone " + strNumOfUse);
+        Intent intent = getIntent();
+        int selectNum = intent.getExtras().getInt("selectNum", 0);
+        numOfUse.setText("" + selectNum);
 
 
 
