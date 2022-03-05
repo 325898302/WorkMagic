@@ -3,8 +3,10 @@ package com.example.workmagic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -21,6 +23,7 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
     Button bt2;
     int selectNum;
     int numOfBoard;
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,53 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
         drawTable();
     }
 
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        player = MediaPlayer.create(MagicCardActivity.this, R.raw.dramamusic);
+//        player.setLooping(true);
+//        player.start();
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        player.release();
+//        player = null;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        super.onOptionsItemSelected(item);
+//        int id = item.getItemId();
+//        x=0;
+//        if (id == R.id.phone) {
+//            Intent intent = new Intent(this, AboutShowActivity.class);
+//            intent.putExtra("menu", true);
+//            startActivity(intent);
+//        }
+//
+//        if (id == R.id.music) {
+//            if (player == null) {
+//                player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
+//                player.setLooping(true);
+//                player.start();
+//                Toast.makeText(this, "play", Toast.LENGTH_SHORT).show();
+//                x=1;
+//                item.setIcon(R.drawable.musicyes);
+//            }
+//            else {
+//                player.release();
+//                player = null;
+//                Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
+//                item.setIcon(R.drawable.musicno);
+//            }
+//
+//        }
+//
+//        return true;
+//    }
+
     private void drawTable() {
         board[numOfBoard] = new BoardActivity(firstNum);
         boardNums = board[numOfBoard].getBoardNums();
@@ -48,13 +98,13 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
             int j = 0;
 
 
-            ((TextView) row.findViewById(R.id.tv1)).setText("  " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column1)).setText("  " + boardNums[i][j]);
             j++;
-            ((TextView) row.findViewById(R.id.tv2)).setText("   " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column2)).setText("   " + boardNums[i][j]);
             j++;
-            ((TextView) row.findViewById(R.id.tv3)).setText("   " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column3)).setText("   " + boardNums[i][j]);
             j++;
-            ((TextView) row.findViewById(R.id.tv4)).setText("   " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column4)).setText("   " + boardNums[i][j]);
             tbl.addView(row);
         }
 

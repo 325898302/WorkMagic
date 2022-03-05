@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView imageFire;
     Button b1, b2, b3;
     Animation anim2;
-    int x;
+    int bodekworkmusic;
     MediaPlayer player;
 
     @Override
@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onPause();
         player.release();
         player = null;
-        Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         int id = item.getItemId();
-        x=0;
+        bodekworkmusic=0;
         if (id == R.id.phone) {
             Intent intent = new Intent(this, AboutShowActivity.class);
             intent.putExtra("menu", true);
@@ -87,14 +86,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
                 player.setLooping(true);
                 player.start();
-                Toast.makeText(this, "play", Toast.LENGTH_SHORT).show();
-                x=1;
+                bodekworkmusic=1;
                 item.setIcon(R.drawable.musicyes);
             }
             else {
                 player.release();
                 player = null;
-                Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
+                bodekworkmusic=2;
                 item.setIcon(R.drawable.musicno);
             }
 
@@ -107,7 +105,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == b1) {
-            Intent intent = new Intent(MainActivity.this, MakeMagicActivity.class);
+
+            Intent intent = new Intent(this, MakeMagicActivity.class);
+            intent.putExtra("musicwork", bodekworkmusic);
             startActivity(intent);
         }
         if (v == b2) {

@@ -16,15 +16,17 @@
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/drawable/ic_you.xml" value="0.2546875" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/drawable/ic_youyube.xml" value="0.2703125" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_learnmagic.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_magic_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_magic_card.xml" value="0.264" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_main3.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_main4.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_makemagic.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/activity_num_discovery.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/custom2.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/custom_layout.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/dialogwhatsapp.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/layout/row_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/menu/menu_main2.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/amitg/AndroidStudioProjects/WorkMagic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2546875" />
@@ -41,7 +43,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.25416666666666665" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>
