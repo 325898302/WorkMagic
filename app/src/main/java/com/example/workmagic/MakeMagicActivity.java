@@ -21,7 +21,7 @@ public class MakeMagicActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_makemagic);
-        think= findViewById(R.id.think);
+        think = findViewById(R.id.think);
         think.setOnClickListener(this);
 
         Intent intent = getIntent();
@@ -72,8 +72,8 @@ public class MakeMagicActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        if(v==think){
-            Intent intent= new Intent(MakeMagicActivity. this, MagicCardActivity.class);
+        if (v == think) {
+            Intent intent = new Intent(MakeMagicActivity.this, MagicCardActivity.class);
             startActivity(intent);
         }
     }
