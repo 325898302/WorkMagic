@@ -98,7 +98,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
     public void createLoginDialog1(){
         dialog1= new Dialog(this);
-        dialog1.setContentView(R.layout.dialogwhatsapp);
+        dialog1.setContentView(R.layout.dialog_whatsapp);
         dialog1.setCancelable(true);
         btSMS = (Button)dialog1. findViewById(R.id.btSMS);
         btSMS.setOnClickListener(this);

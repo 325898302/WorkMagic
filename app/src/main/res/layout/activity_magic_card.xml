@@ -48,6 +48,7 @@
             android:layout_gravity="center"
             android:layout_marginRight="85dp"
             android:text="כן"
+            android:backgroundTint="#D6840B"
             android:textStyle="bold"/>
 
         <Button
@@ -57,6 +58,7 @@
             android:layout_gravity="center"
             android:layout_marginRight="40dp"
             android:text="לא"
+            android:backgroundTint="#D6840B"
             android:textStyle="bold"/>
 
     </LinearLayout>

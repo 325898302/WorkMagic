@@ -5,21 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#040303"
     tools:context=".NumDiscoveryActivity">
 
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/fireworks"
-        android:id="@+id/imGifFirework"/>
+        android:src="@drawable/zikok"
+        android:id="@+id/imGifzikok"/>
 
     <TextView
         android:id="@+id/numOfUse"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:gravity="center"
-        android:text="g"
+        android:text=""
         android:textColor="#FFEB3B"
         android:textSize="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,6 +29,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.463" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

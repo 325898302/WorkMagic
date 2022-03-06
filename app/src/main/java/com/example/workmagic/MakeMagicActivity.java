@@ -24,9 +24,8 @@ public class MakeMagicActivity extends AppCompatActivity implements View.OnClick
         think = findViewById(R.id.think);
         think.setOnClickListener(this);
 
-        Intent intent = getIntent();
-        bodekmusic = intent.getExtras().getInt("bodekmusicwork", 0);
-
+//        Intent intent = getIntent();
+//        bodekmusic = intent.getExtras().getInt("bodekmusicwork", bodekmusic);
 
     }
 
@@ -49,17 +48,14 @@ public class MakeMagicActivity extends AppCompatActivity implements View.OnClick
 //    public boolean onOptionsItemSelected(MenuItem item) {
 //        super.onOptionsItemSelected(item);
 //        int id = item.getItemId();
-//        x=0;
 //
 //        if (id == R.id.music) {
 //            if (player == null) {
 //                player = MediaPlayer.create(MakeMagicActivity.this, R.raw.dramamusic);
 //                player.setLooping(true);
 //                player.start();
-//                x=1;
 //                item.setIcon(R.drawable.musicyes);
-//            }
-//            else {
+//            } else {
 //                player.release();
 //                player = null;
 //                item.setIcon(R.drawable.musicno);

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,28 +17,27 @@ import com.bumptech.glide.Glide;
 public class NumDiscoveryActivity extends AppCompatActivity {
 
     TextView numOfUse;
-    ImageView imGifFirework;
-
+    ImageView imGifzikok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_num_discovery);
         numOfUse = (TextView) findViewById(R.id.numOfUse);
-        imGifFirework = findViewById(R.id.imGifFirework);
+        imGifzikok = findViewById(R.id.imGifzikok);
 
         Intent intent = getIntent();
         int selectNum = intent.getExtras().getInt("selectNum", 0);
         numOfUse.setText("" + selectNum);
 
 
-
-        Glide.with(getApplicationContext()).load(R.drawable.fireworks).into(imGifFirework);
+        Glide.with(getApplicationContext()).load(R.drawable.zikok).into(imGifzikok);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
             }
-        }, 900000000);
+        }, 0);
+
     }
 }

@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         int id = item.getItemId();
-        bodekworkmusic=0;
         if (id == R.id.phone) {
             Intent intent = new Intent(this, AboutShowActivity.class);
             intent.putExtra("menu", true);
@@ -86,13 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
                 player.setLooping(true);
                 player.start();
-                bodekworkmusic=1;
                 item.setIcon(R.drawable.musicyes);
             }
             else {
                 player.release();
                 player = null;
-                bodekworkmusic=2;
                 item.setIcon(R.drawable.musicno);
             }
 
@@ -107,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == b1) {
 
             Intent intent = new Intent(this, MakeMagicActivity.class);
-            intent.putExtra("musicwork", bodekworkmusic);
+//            intent.putExtra("bodekmusicwork", bodekworkmusic);
             startActivity(intent);
         }
         if (v == b2) {

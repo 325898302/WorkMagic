@@ -4,61 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MakeMagicActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MakeMagicActivity">
 
     <TextView
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="תחשוב על מספר"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        android:textSize="30dp"
+        android:text="תחשוב על מספר"
         android:textColor="#E18907"
-        android:id="@+id/tv1"
-        />
+        android:textSize="30dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="בין 1 ל- 31"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:textSize="30dp"
-        android:textColor="#E18907"
         android:id="@+id/tv2"
-        />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="בין 1 ל- 31"
+        android:textColor="#E18907"
+        android:textSize="30dp" />
 
 
     <TextView
+        android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ואנחנו נגלה מה בחרת!"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:textSize="25dp"
+        android:text="ואנחנו נגלה מה בחרת!"
         android:textColor="#E18907"
-        android:id="@+id/tv3"
-        />
-
+        android:textSize="25dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/number31"
-        android:layout_marginTop="80dp"
+        android:layout_width="300dp"
+        android:layout_height="210dp"
         android:layout_gravity="center"
-        />
+        android:layout_marginTop="70dp"
+        android:background="@drawable/number31" />
 
     <Button
+        android:id="@+id/think"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="חשבתי"
-        android:textStyle="bold"
-        android:layout_marginTop="80dp"
         android:layout_gravity="center"
-        android:id="@+id/think"
-        />
+        android:layout_marginTop="65dp"
+        android:backgroundTint="#63439A"
+        android:text="חשבתי"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
