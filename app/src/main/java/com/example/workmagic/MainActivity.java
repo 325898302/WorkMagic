@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         imageFire = findViewById(R.id.imageFire);
         anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2);
-        b1 = (Button) findViewById(R.id.b1);
+        b1 = findViewById(R.id.b1);
         b1.setOnClickListener(this);
-        b2 = (Button) findViewById(R.id.b2);
+        b2 = findViewById(R.id.b2);
         b2.setOnClickListener(this);
-        b3 = (Button) findViewById(R.id.b3);
+        b3 = findViewById(R.id.b3);
         b3.setOnClickListener(this);
 
 

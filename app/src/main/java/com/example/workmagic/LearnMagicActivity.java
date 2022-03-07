@@ -80,7 +80,6 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
             intent.putExtra("VIDEO_ID", videoId);
             startActivity(intent);
-
         }
         if (v == b2) {
             String videoId = "wc0HuAzgPmY";
