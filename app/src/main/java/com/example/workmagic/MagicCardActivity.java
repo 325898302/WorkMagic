@@ -3,9 +3,11 @@ package com.example.workmagic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,74 +21,27 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
     BoardActivity[] board;
     TableLayout tbl;
     int[][] boardNums;
-    Button bt1;
-    Button bt2;
+    Button btYes;
+    Button btNo;
     int selectNum;
     int numOfBoard;
-    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magic_card);
         tbl = findViewById(R.id.tbl);
-        firstNum = 1;
+        firstNum = 1;  // המספר החשוב בטבלה
         numOfBoard = 0;
         selectNum = 0;
-        bt1 = (Button) findViewById(R.id.bt1);
-        bt1.setOnClickListener(this);
-        bt2 = (Button) findViewById(R.id.bt2);
-        bt2.setOnClickListener(this);
+        btYes = findViewById(R.id.bt1);
+        btYes.setOnClickListener(this);
+        btNo = findViewById(R.id.bt2);
+        btNo.setOnClickListener(this);
         board = new BoardActivity[5];   // במות הטבלאות שיש לי
         drawTable();
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        player = MediaPlayer.create(MagicCardActivity.this, R.raw.dramamusic);
-//        player.setLooping(true);
-//        player.start();
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        player.release();
-//        player = null;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        super.onOptionsItemSelected(item);
-//        int id = item.getItemId();
-//        x=0;
-//        if (id == R.id.phone) {
-//            Intent intent = new Intent(this, AboutShowActivity.class);
-//            intent.putExtra("menu", true);
-//            startActivity(intent);
-//        }
-//
-//        if (id == R.id.music) {
-//            if (player == null) {
-//                player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
-//                player.setLooping(true);
-//                player.start();
-//                Toast.makeText(this, "play", Toast.LENGTH_SHORT).show();
-//                x=1;
-//                item.setIcon(R.drawable.musicyes);
-//            }
-//            else {
-//                player.release();
-//                player = null;
-//                Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
-//                item.setIcon(R.drawable.musicno);
-//            }
-//
-//        }
-//
-//        return true;
-//    }
 
     private void drawTable() {
         board[numOfBoard] = new BoardActivity(firstNum);
@@ -107,14 +62,60 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
             ((TextView) row.findViewById(R.id.column4)).setText("   " + boardNums[i][j]);
             tbl.addView(row);
         }
-
         tbl.requestLayout();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_nomain, menu);
+        SharedPreferences sp;
+        MenuItem i = menu.findItem(R.id.music);
+        sp = getSharedPreferences("sound", 0);
+        if(sp.getBoolean("music", true)) {
+            i.setIcon(R.drawable.musicyes);
+        } else {
+            i.setIcon(R.drawable.musicno);
+        }
+        i = menu.findItem(R.id.phone); // מעלים את הכפתור של phone
+        i.setVisible(false);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+
+        if (id == R.id.rash) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("app", true);
+            startActivity(intent);
+        }
+
+        if (id == R.id.music) {
+            SharedPreferences sp;
+            sp = getSharedPreferences("sound", 0);
+            SharedPreferences.Editor editor = sp.edit();
+            if (sp.getBoolean("music", true)) {
+                item.setIcon(R.drawable.musicno);
+                stopService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", false);
+            } else {
+                item.setIcon(R.drawable.musicyes);
+                startService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", true);
+            }
+            editor.apply();
+        }
+
+        return true;
     }
 
     @Override
     public void onClick(View v) {
 
-        if (v == bt1) {
+        if (v == btYes) {
             board[numOfBoard].setIsNumInBoard(true);
             selectNum += firstNum;
             if (numOfBoard < 4) {
@@ -127,13 +128,11 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
                 Intent intent = new Intent(this, NumDiscoveryActivity.class);
                 intent.putExtra("selectNum", selectNum);
                 startActivity(intent);
-
             }
-
         }
 
 
-        if (v == bt2) {
+        if (v == btNo) {
             board[numOfBoard].setIsNumInBoard(false);
 
             if (numOfBoard < 4) {

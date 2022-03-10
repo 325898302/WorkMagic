@@ -3,8 +3,10 @@ package com.example.workmagic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,9 +15,6 @@ import android.widget.Toast;
 public class MakeMagicActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button think;
-    int bodekmusic;
-    MediaPlayer player;
-    int x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,48 +22,56 @@ public class MakeMagicActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_makemagic);
         think = findViewById(R.id.think);
         think.setOnClickListener(this);
-
-//        Intent intent = getIntent();
-//        bodekmusic = intent.getExtras().getInt("bodekmusicwork", bodekmusic);
-
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        player = MediaPlayer.create(MakeMagicActivity.this, R.raw.dramamusic);
-//        player.setLooping(true);
-//        player.start();
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        player.release();
-//        player = null;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        super.onOptionsItemSelected(item);
-//        int id = item.getItemId();
-//
-//        if (id == R.id.music) {
-//            if (player == null) {
-//                player = MediaPlayer.create(MakeMagicActivity.this, R.raw.dramamusic);
-//                player.setLooping(true);
-//                player.start();
-//                item.setIcon(R.drawable.musicyes);
-//            } else {
-//                player.release();
-//                player = null;
-//                item.setIcon(R.drawable.musicno);
-//            }
-//
-//        }
-//
-//        return true;
-//    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_nomain, menu);
+        SharedPreferences sp;
+        MenuItem i = menu.findItem(R.id.music);
+        sp = getSharedPreferences("sound", 0);
+        if(sp.getBoolean("music", true)) {
+            i.setIcon(R.drawable.musicyes);
+        } else {
+            i.setIcon(R.drawable.musicno);
+        }
+        i = menu.findItem(R.id.phone);  // מעלים את הכפתור של phone
+        i.setVisible(false);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+
+        if (id == R.id.rash) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("app", true);
+            startActivity(intent);
+        }
+
+        if (id == R.id.music) {
+            SharedPreferences sp;
+            sp = getSharedPreferences("sound", 0);
+            SharedPreferences.Editor editor = sp.edit();
+            if (sp.getBoolean("music", true)) {
+                item.setIcon(R.drawable.musicno);
+                stopService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", false);
+            } else {
+                item.setIcon(R.drawable.musicyes);
+                startService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", true);
+            }
+            editor.apply();
+        }
+
+        return true;
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -73,5 +80,4 @@ public class MakeMagicActivity extends AppCompatActivity implements View.OnClick
             startActivity(intent);
         }
     }
-
 }

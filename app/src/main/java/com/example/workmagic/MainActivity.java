@@ -3,6 +3,7 @@ package com.example.workmagic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,10 +21,8 @@ import com.bumptech.glide.Glide;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView imageFire;
-    Button b1, b2, b3;
+    Button btDoMeMagic, btCardMagic, btAboutShow;
     Animation anim2;
-    int bodekworkmusic;
-    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,42 +30,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         imageFire = findViewById(R.id.imageFire);
         anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2);
-        b1 = findViewById(R.id.b1);
-        b1.setOnClickListener(this);
-        b2 = findViewById(R.id.b2);
-        b2.setOnClickListener(this);
-        b3 = findViewById(R.id.b3);
-        b3.setOnClickListener(this);
-
-
+        btDoMeMagic = findViewById(R.id.bDoMeMagic);
+        btDoMeMagic.setOnClickListener(this);
+        btCardMagic = findViewById(R.id.bCardMagic);
+        btCardMagic.setOnClickListener(this);
+        btAboutShow = findViewById(R.id.bAboutShow);
+        btAboutShow.setOnClickListener(this);
 
         Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageFire);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-            }
-        }, 900000000);
+        if(getIntent().getExtras() == null || !getIntent().getExtras().getBoolean("app")) {
+            SharedPreferences sp;
+            sp = getSharedPreferences("sound", 0);
+            SharedPreferences.Editor editor = sp.edit();
+            startService(new Intent(this, ServiceMusic.class));
+            editor.putBoolean("music", true);
+            editor.apply();
+        }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
-        player.setLooping(true);
-        player.start();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        player.release();
-        player = null;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        SharedPreferences sp;
+        MenuItem i = menu.findItem(R.id.music);
+        sp = getSharedPreferences("sound", 0);
+        if(sp.getBoolean("music", true)) {
+            i.setIcon(R.drawable.musicyes);
+        } else {
+            i.setIcon(R.drawable.musicno);
+        }
         return true;
     }
 
@@ -81,17 +75,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (id == R.id.music) {
-            if (player == null) {
-                player = MediaPlayer.create(MainActivity.this, R.raw.dramamusic);
-                player.setLooping(true);
-                player.start();
-                item.setIcon(R.drawable.musicyes);
-            }
-            else {
-                player.release();
-                player = null;
+            SharedPreferences sp;
+            sp = getSharedPreferences("sound", 0);
+            SharedPreferences.Editor editor = sp.edit();
+            if (sp.getBoolean("music", true))
+            {
                 item.setIcon(R.drawable.musicno);
+                stopService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", false);
+            } else {
+                item.setIcon(R.drawable.musicyes);
+                startService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", true);
             }
+            editor.apply();
 
         }
 
@@ -101,19 +98,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == b1) {
+        if (v == btDoMeMagic) {
 
             Intent intent = new Intent(this, MakeMagicActivity.class);
-//            intent.putExtra("bodekmusicwork", bodekworkmusic);
             startActivity(intent);
         }
-        if (v == b2) {
+        if (v == btCardMagic) {
             Intent intent = new Intent(MainActivity.this, LearnMagicActivity.class);
             startActivity(intent);
         }
-        if (v == b3) {
+        if (v == btAboutShow) {
             Intent intent = new Intent(MainActivity.this, AboutShowActivity.class);
-            intent.putExtra("menu", false);//
+            intent.putExtra("menu", false);
             startActivity(intent);
         }
     }

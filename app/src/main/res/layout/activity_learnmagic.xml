@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/b1"
+            android:id="@+id/bFanCard"
             android:layout_width="415dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -28,7 +28,7 @@
             android:background="@drawable/c1" />
 
         <Button
-            android:id="@+id/b2"
+            android:id="@+id/bEightRed"
             android:layout_width="415dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -45,7 +45,7 @@
 
 
         <Button
-            android:id="@+id/b3"
+            android:id="@+id/bKingQuin"
             android:layout_width="415dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -62,7 +62,7 @@
 
 
         <Button
-            android:id="@+id/b4"
+            android:id="@+id/bFourCard"
             android:layout_width="415dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -79,7 +79,7 @@
 
 
         <Button
-            android:id="@+id/b5"
+            android:id="@+id/bRedBlack"
             android:layout_width="415dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -96,7 +96,7 @@
 
 
         <Button
-            android:id="@+id/b6"
+            android:id="@+id/bForeTold"
             android:layout_width="415dp"
             android:layout_height="60dp"
             android:layout_gravity="center"

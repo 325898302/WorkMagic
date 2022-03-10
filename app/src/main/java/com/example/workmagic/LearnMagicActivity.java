@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,27 +13,27 @@ import android.view.View;
 import android.widget.Button;
 
 public class LearnMagicActivity extends AppCompatActivity implements View.OnClickListener {
-    Button b1, b2, b3, b4, b5, b6;
+    Button bFanCard, bEightRed, bKingQuin, bFourCard, bRedBlack, bForeTold;
 
-    Dialog d2;
+    Dialog dialogExp;
     Button btExp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learnmagic);
-        b1 = (Button) findViewById(R.id.b1);
-        b1.setOnClickListener(this);
-        b2 = (Button) findViewById(R.id.b2);
-        b2.setOnClickListener(this);
-        b3 = (Button) findViewById(R.id.b3);
-        b3.setOnClickListener(this);
-        b4 = (Button) findViewById(R.id.b4);
-        b4.setOnClickListener(this);
-        b5 = (Button) findViewById(R.id.b5);
-        b5.setOnClickListener(this);
-        b6 = (Button) findViewById(R.id.b6);
-        b6.setOnClickListener(this);
+        bFanCard = findViewById(R.id.bFanCard);
+        bFanCard.setOnClickListener(this);
+        bEightRed = findViewById(R.id.bEightRed);
+        bEightRed.setOnClickListener(this);
+        bKingQuin = findViewById(R.id.bKingQuin);
+        bKingQuin.setOnClickListener(this);
+        bFourCard = findViewById(R.id.bFourCard);
+        bFourCard.setOnClickListener(this);
+        bRedBlack = findViewById(R.id.bRedBlack);
+        bRedBlack.setOnClickListener(this);
+        bForeTold = findViewById(R.id.bFanCard);
+        bForeTold.setOnClickListener(this);
 
         createLoginDialog2();
     }
@@ -41,17 +42,25 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_nomain, menu);
+        SharedPreferences sp;
+        MenuItem i = menu.findItem(R.id.music);
+        sp = getSharedPreferences("sound", 0);
+        if(sp.getBoolean("music", true)) {
+            i.setIcon(R.drawable.musicyes);
+        } else {
+            i.setIcon(R.drawable.musicno);
+        }
         return true;
     }
 
 
     public void createLoginDialog2() {
-        d2 = new Dialog(this);
-        d2.setContentView(R.layout.dialog_custom);
-        d2.setCancelable(true);
-        btExp = (Button) d2.findViewById(R.id.btExp);
+        dialogExp = new Dialog(this);
+        dialogExp.setContentView(R.layout.dialog_custom);
+        dialogExp.setCancelable(true);
+        btExp = dialogExp.findViewById(R.id.btExp);
         btExp.setOnClickListener(this);
-        d2.show();
+        dialogExp.show();
 
     }
 
@@ -62,50 +71,66 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
         int id = item.getItemId();
         if (id == R.id.rash) {
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("app", true);
             startActivity(intent);
         }
         if (id == R.id.phone) {
             Intent intent = new Intent(this, AboutShowActivity.class);
-            intent.putExtra("menu", true);//
+            intent.putExtra("menu", true);
             startActivity(intent);
         }
-
+        if (id == R.id.music) {
+            SharedPreferences sp;
+            sp = getSharedPreferences("sound", 0);
+            SharedPreferences.Editor editor = sp.edit();
+            if (sp.getBoolean("music", true))
+            {
+                item.setIcon(R.drawable.musicno);
+                stopService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", false);
+            } else {
+                item.setIcon(R.drawable.musicyes);
+                startService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", true);
+            }
+            editor.apply();
+        }
         return true;
     }
 
     @Override
     public void onClick(View v) {
-        if (v == b1) {
+        if (v == bFanCard) {
             String videoId = "rIMWKc-MVkI";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
             intent.putExtra("VIDEO_ID", videoId);
             startActivity(intent);
         }
-        if (v == b2) {
+        if (v == bEightRed) {
             String videoId = "wc0HuAzgPmY";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
             intent.putExtra("VIDEO_ID", videoId);
             startActivity(intent);
         }
-        if (v == b3) {
+        if (v == bKingQuin) {
             String videoId = "U20JMr3BLXQ";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
             intent.putExtra("VIDEO_ID", videoId);
             startActivity(intent);
         }
-        if (v == b4) {
+        if (v == bFourCard) {
             String videoId = "bOgzdG6PEeQ";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
             intent.putExtra("VIDEO_ID", videoId);
             startActivity(intent);
         }
-        if (v == b5) {
+        if (v == bRedBlack) {
             String videoId = "mWhKjVMlIl4";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
             intent.putExtra("VIDEO_ID", videoId);
             startActivity(intent);
         }
-        if (v == b6) {
+        if (v == bForeTold) {
             String videoId = "2tjBPfBbCeo";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
             intent.putExtra("VIDEO_ID", videoId);
@@ -113,7 +138,7 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
         }
 
         if (v == btExp) {
-            d2.dismiss();
+            dialogExp.dismiss();
         }
     }
 }

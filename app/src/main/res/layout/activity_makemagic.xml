@@ -43,7 +43,7 @@
         android:layout_height="210dp"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:background="@drawable/number31" />
+        android:background="@drawable/num" />
 
     <Button
         android:id="@+id/think"

@@ -6,10 +6,10 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,8 +32,8 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     Button btPhone;
     ImageView imAnim;
     Button btWhatsApp;
-    Dialog dialog1;
-    EditText ed1, ed2, ed3, ed4, ed5, ed6;
+    Dialog dialogDetails;
+    EditText edName, edWhy, edSum, edAge, edCity, edPhone;
     ScrollView sv;
 
     Button btSMS;
@@ -43,11 +43,9 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutshow);
         initViews();
-        ballonAnim();
-        phone();
 
 
-        if(((Boolean) getIntent().getExtras().get("menu"))){
+        if (((Boolean) getIntent().getExtras().get("menu"))) {
             sv.post(new Runnable() {
                 public void run() {
                     sv.fullScroll(View.FOCUS_DOWN);
@@ -60,56 +58,49 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     private void initViews() {
         imAnim = findViewById(R.id.imageFire);
         sv = findViewById(R.id.sv);
-        viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
-        left = (Button) findViewById(R.id.left);
+        viewFlipper = findViewById(R.id.viewFlipper);
+        left = findViewById(R.id.left);
         left.setOnClickListener(this);
-        btWhatsApp = (Button) findViewById(R.id.btWhatsApp);
+        btWhatsApp = findViewById(R.id.btWhatsApp);
         btWhatsApp.setOnClickListener(this);
-        right = (Button) findViewById(R.id.right);
+        right = findViewById(R.id.right);
         right.setOnClickListener(this);
-        btPhone = (Button) findViewById(R.id.btPhone);
+        btPhone = findViewById(R.id.btPhone);
         btPhone.setOnClickListener(this);
-        tv1 = (TextView) findViewById(R.id.tv1);
+        tv1 = findViewById(R.id.tv1);
     }
 
-
-    private void ballonAnim() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        }, 999999999);
-    }
-    private void phone() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        }, 999999999);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_nomain, menu);
+        SharedPreferences sp;
+        MenuItem i = menu.findItem(R.id.music);
+        sp = getSharedPreferences("sound", 0);
+        if (sp.getBoolean("music", true)) {
+            i.setIcon(R.drawable.musicyes);
+        } else {
+            i.setIcon(R.drawable.musicno);
+        }
+        i = menu.findItem(R.id.phone);  // מעלים את הכפתור של phone
+        i.setVisible(false);
         return true;
     }
 
-    public void createLoginDialog1(){
-        dialog1= new Dialog(this);
-        dialog1.setContentView(R.layout.dialog_whatsapp);
-        dialog1.setCancelable(true);
-        btSMS = (Button)dialog1. findViewById(R.id.btSMS);
+    public void createLoginDialog1() {
+        dialogDetails = new Dialog(this);
+        dialogDetails.setContentView(R.layout.dialog_whatsapp);
+        dialogDetails.setCancelable(true);
+        btSMS = (Button) dialogDetails.findViewById(R.id.btSMS);
         btSMS.setOnClickListener(this);
-        ed1 = (EditText)dialog1.findViewById(R.id.name);
-        ed2 = (EditText)dialog1.findViewById(R.id.why);
-        ed3 = (EditText)dialog1.findViewById(R.id.sum);
-        ed4 = (EditText)dialog1.findViewById(R.id.age);
-        ed5 = (EditText)dialog1.findViewById(R.id.city);
-        ed6 = (EditText)dialog1.findViewById(R.id.phone);
+        edName = dialogDetails.findViewById(R.id.name);
+        edWhy = dialogDetails.findViewById(R.id.why);
+        edSum = dialogDetails.findViewById(R.id.sum);
+        edAge = dialogDetails.findViewById(R.id.age);
+        edCity = dialogDetails.findViewById(R.id.city);
+        edPhone = dialogDetails.findViewById(R.id.phone);
 
-        dialog1.show();
+        dialogDetails.show();
     }
 
     private boolean isAppInstalled(String s) {
@@ -118,9 +109,9 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
         try {
             packageManager.getPackageInfo(s, packageManager.GET_ACTIVITIES);
-            is_installed= true;
+            is_installed = true;
         } catch (PackageManager.NameNotFoundException e) {
-            is_installed= false;
+            is_installed = false;
             e.printStackTrace();
         }
         return is_installed;
@@ -133,12 +124,30 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         int id = item.getItemId();
         if (id == R.id.rash) {
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("app", true);
             startActivity(intent);
         }
-        if(id==R.id.phone) {
-            Intent intent=new Intent(this, AboutShowActivity.class);
-            intent.putExtra("menu", true);//
+
+        if (id == R.id.phone) {
+            Intent intent = new Intent(this, AboutShowActivity.class);
+            intent.putExtra("menu", true);
             startActivity(intent);
+        }
+
+        if (id == R.id.music) {
+            SharedPreferences sp;
+            sp = getSharedPreferences("sound", 0);
+            SharedPreferences.Editor editor = sp.edit();
+            if (sp.getBoolean("music", true)) {
+                item.setIcon(R.drawable.musicno);
+                stopService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", false);
+            } else {
+                item.setIcon(R.drawable.musicyes);
+                startService(new Intent(this, ServiceMusic.class));
+                editor.putBoolean("music", true);
+            }
+            editor.apply();
         }
 
         return true;
@@ -147,35 +156,33 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         Animation in, out;
-        final String numPhone= "+972503407888";
+        final String numPhone = "+972503407888";
 
-        String st1="";
-        String st2="";
-        String st3="";
-        String st4="";
-        String st5="";
-        String st6="";
-        String text="";
+        String st1 = "";
+        String st2 = "";
+        String st3 = "";
+        String st4 = "";
+        String st5 = "";
+        String st6 = "";
+        String text = "";
 
-        if (v== btSMS){
-            
-            st1= ed1.getText().toString();
-            st2= ed2.getText().toString();
-            st3= ed3.getText().toString();
-            st4= ed4.getText().toString();
-            st5= ed5.getText().toString();
-            st6= ed6.getText().toString();
+        if (v == btSMS) {
 
-            text= String.format("שלום, קוראים לי %1$s, אני אשמח לקבל פרטים לגבי הופעת קסמים ב%5$s לכבוד %2$s. כמות המשתתפים היא %3$s, הגיל המרכזי של ההופעה הוא %4$s. תודה, %6$s", st1, st2, st3, st4, st5, st6);
+            st1 = edName.getText().toString();
+            st2 = edWhy.getText().toString();
+            st3 = edSum.getText().toString();
+            st4 = edAge.getText().toString();
+            st5 = edCity.getText().toString();
+            st6 = edPhone.getText().toString();
 
-            boolean installed= isAppInstalled ("com.whatsapp");
-            if (installed){
-                Intent intent= new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+ numPhone +"&text="+ text));
+            text = String.format("שלום, קוראים לי %1$s, אני אשמח לקבל פרטים לגבי הופעת קסמים ב%5$s לכבוד %2$s. כמות המשתתפים היא %3$s, הגיל המרכזי של ההופעה הוא %4$s. תודה, %6$s", st1, st2, st3, st4, st5, st6);
+
+            boolean installed = isAppInstalled("com.whatsapp");
+            if (installed) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + numPhone + "&text=" + text));
                 startActivity(intent);
-            }
-            else
-            {
+            } else {
                 Toast.makeText(AboutShowActivity.this, "Whatsapp is not installed!", Toast.LENGTH_SHORT).show();
             }
         }
