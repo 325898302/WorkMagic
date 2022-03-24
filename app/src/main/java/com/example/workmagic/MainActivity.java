@@ -78,8 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             SharedPreferences sp;
             sp = getSharedPreferences("sound", 0);
             SharedPreferences.Editor editor = sp.edit();
-            if (sp.getBoolean("music", true))
-            {
+            if (sp.getBoolean("music", true)) {
                 item.setIcon(R.drawable.musicno);
                 stopService(new Intent(this, ServiceMusic.class));
                 editor.putBoolean("music", false);
@@ -99,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == btDoMeMagic) {
-
             Intent intent = new Intent(this, MakeMagicActivity.class);
             startActivity(intent);
         }

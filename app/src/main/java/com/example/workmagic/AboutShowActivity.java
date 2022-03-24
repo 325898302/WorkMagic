@@ -35,7 +35,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     Dialog dialogDetails;
     EditText edName, edWhy, edSum, edAge, edCity, edPhone;
     ScrollView sv;
-
+    final int REQUEST_CALL_PHONE_PERMISSION = 50;
     Button btSMS;
 
     @Override
@@ -91,7 +91,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         dialogDetails = new Dialog(this);
         dialogDetails.setContentView(R.layout.dialog_whatsapp);
         dialogDetails.setCancelable(true);
-        btSMS = (Button) dialogDetails.findViewById(R.id.btSMS);
+        btSMS = dialogDetails.findViewById(R.id.btSMS);
         btSMS.setOnClickListener(this);
         edName = dialogDetails.findViewById(R.id.name);
         edWhy = dialogDetails.findViewById(R.id.why);
@@ -193,10 +193,12 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
             Uri data = Uri.parse("tel:" + "0503407888");
             intent.setData(data);
             intent.setAction(Intent.ACTION_DIAL);
-            startActivity(intent);
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(AboutShowActivity.this, new String[] {Manifest.permission.CALL_PHONE}, REQUEST_CALL_PHONE_PERMISSION);
                 return;
             }
+            startActivity(intent);
+
         }
 
         if (v == btWhatsApp) {

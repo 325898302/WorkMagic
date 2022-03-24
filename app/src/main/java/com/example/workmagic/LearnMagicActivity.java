@@ -56,7 +56,7 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
 
     public void createLoginDialog2() {
         dialogExp = new Dialog(this);
-        dialogExp.setContentView(R.layout.dialog_custom);
+        dialogExp.setContentView(R.layout.dialog_exp);
         dialogExp.setCancelable(true);
         btExp = dialogExp.findViewById(R.id.btExp);
         btExp.setOnClickListener(this);
