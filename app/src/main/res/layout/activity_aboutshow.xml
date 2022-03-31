@@ -2,10 +2,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:id="@+id/sv"
     tools:context=".AboutShowActivity">
 
 
@@ -218,16 +218,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="64dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="64dp">
 
-                <pl.droidsonroids.gif.GifImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:id="@+id/imPhone"
-                    android:src="@drawable/phone" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/GifPhone"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/phone" />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/imPhone"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/phone" />
+                </RelativeLayout>
 
                 <Button
                     android:id="@+id/btPhone"
@@ -241,8 +253,7 @@
                     android:shadowRadius="40"
                     android:text="0503407888"
                     android:textSize="16dp"
-                    android:textStyle="bold">
-                </Button>
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
@@ -254,10 +265,10 @@
                 android:orientation="horizontal">
 
                 <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/im"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:id="@+id/im"
                     android:src="@drawable/whatsapp" />
 
                 <Button

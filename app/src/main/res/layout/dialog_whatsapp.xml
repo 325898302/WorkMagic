@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:layout_height="500dp"
+    android:layout_height="wrap_content"
     android:background="#D2F4F0"
     android:orientation="vertical">
 
@@ -10,28 +10,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
+        android:gravity="center"
         android:textSize="18dp"
         android:textColor="@color/black"
-        android:text="תכתוב את הפרטים לגבי המופע">
+        android:text="כתוב את הפרטים לגבי המופע. \n שלח אותם אלי בוואטסאפ \n ואני אחזור אליך בהקדם">
     </TextView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="18dp"
-        android:textColor="@color/black"
-        android:text="ושלח אותם אלי בווטסאפ">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="18dp"
-        android:textColor="@color/black"
-        android:text="ואני אחזור אליך בהקדם">
-    </TextView>
 
     <EditText
         android:layout_width="200dp"
@@ -104,6 +88,7 @@
         android:backgroundTint="#B1180C"
         android:layout_gravity="center"
         android:textSize="16dp"
+        android:layout_marginBottom="30dp"
         android:textColor="#FFC107"
         android:textStyle="bold"
         android:id="@+id/btSMS">

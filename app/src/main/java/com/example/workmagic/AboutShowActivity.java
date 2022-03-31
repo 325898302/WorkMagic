@@ -30,6 +30,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     Button left;
     Button right;
     Button btPhone;
+    Button GifPhone; // sdhgggggggggggggg
     ImageView imAnim;
     Button btWhatsApp;
     Dialog dialogDetails;
@@ -67,6 +68,8 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         right.setOnClickListener(this);
         btPhone = findViewById(R.id.btPhone);
         btPhone.setOnClickListener(this);
+        GifPhone = findViewById(R.id.GifPhone); // rtherrrrrrrrrrrrrrrrrrrtnjh
+        GifPhone.setOnClickListener(this);
         tv1 = findViewById(R.id.tv1);
     }
 
@@ -187,7 +190,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if (v == btPhone) {
+        if (v == GifPhone) { // fhdynftmjynnnnnnnnnnnnnf
 
             Intent intent = new Intent();
             Uri data = Uri.parse("tel:" + "0503407888");
