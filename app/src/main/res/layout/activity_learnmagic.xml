@@ -20,7 +20,8 @@
             android:text="מניפת קלפים"
             android:textColor="#F1BF2B"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/vid_ic"/>
 
         <ImageView
             android:layout_width="415dp"
@@ -36,7 +37,8 @@
             android:text="איפה השמונה האדום?"
             android:textColor="#F1BF2B"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/vid_ic"/>
 
         <ImageView
             android:layout_width="415dp"
@@ -53,7 +55,8 @@
             android:text="מלכים מוצאים מלכות"
             android:textColor="#F1BF2B"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/vid_ic"/>
 
         <ImageView
             android:layout_width="415dp"
@@ -70,7 +73,8 @@
             android:text="4 קלפי שמונה יהלום"
             android:textColor="#F1BF2B"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/vid_ic"/>
 
         <ImageView
             android:layout_width="415dp"
@@ -87,7 +91,8 @@
             android:text="קסם אדום שחור"
             android:textColor="#F1BF2B"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/vid_ic"/>
 
         <ImageView
             android:layout_width="415dp"
@@ -104,7 +109,8 @@
             android:text="קלף ידוע מראש"
             android:textColor="#F1BF2B"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/vid_ic"/>
 
         <ImageView
             android:layout_width="415dp"

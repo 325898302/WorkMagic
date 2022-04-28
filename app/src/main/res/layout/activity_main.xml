@@ -4,60 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
     android:background="#000000"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageFire"
+        android:layout_width="190dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/fire2" />
 
-        <ImageView
-            android:id="@+id/imageFire"
-            android:layout_width="190dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/fire2" />
 
+    <Button
+        android:id="@+id/bDoMeMagic"
+        android:layout_width="190dp"
+        android:layout_height="90dp"
+        android:backgroundTint="#AA2C22"
+        android:text="איתן \n תעשה לי קסם"
+        android:textColor="#E4D00E"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/bDoMeMagic"
-            android:layout_width="190dp"
-            android:layout_height="90dp"
-            android:backgroundTint="#AA2C22"
-            android:text="איתן \n תעשה לי קסם"
-            android:textColor="#E4D00E"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
+    
         <Button
             android:id="@+id/bCardMagic"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:backgroundTint="#F8BF15"
             android:text="קסמים בקלפים"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/bAboutShow"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:backgroundTint="#009688"
-            android:text="פרטים על המופע"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/bAboutShow"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:backgroundTint="#009688"
+        android:text="פרטים על המופע"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
-
-
-
-        <ImageView
-            android:layout_width="350dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/card2" />
-
-
-
+    <ImageView
+        android:layout_width="330dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/firecard" />
 
 </LinearLayout>

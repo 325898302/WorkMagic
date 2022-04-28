@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:gravity="center"
-            android:text="אז קדימה, זה הזמן להזמין קוסם לילדים!"
+            android:text="אז קדימה, זה הזמן להזמין קוסם!"
             android:textColor="#CD8110"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -164,13 +164,6 @@
                     android:gravity="center"
                     android:scaleType="fitXY"
                     android:src="@drawable/show10" />
-
-                <ImageView
-                    android:layout_width="270dp"
-                    android:layout_height="200dp"
-                    android:gravity="center"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/show11" />
 
             </ViewFlipper>
 
