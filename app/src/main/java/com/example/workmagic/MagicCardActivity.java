@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,11 +13,10 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MagicCardActivity extends AppCompatActivity implements View.OnClickListener {
     int firstNum;
-    BoardActivity[] board;
+    Board[] board;
     TableLayout tbl;
     int[][] boardNums;
     Button btYes;
@@ -38,13 +36,13 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
         btYes.setOnClickListener(this);
         btNo = findViewById(R.id.bt2);
         btNo.setOnClickListener(this);
-        board = new BoardActivity[5];   // במות הטבלאות שיש לי
+        board = new Board[5];   // כמות הטבלאות שיש לי
         drawTable();
     }
 
 
     private void drawTable() {
-        board[numOfBoard] = new BoardActivity(firstNum);
+        board[numOfBoard] = new Board(firstNum);
         boardNums = board[numOfBoard].getBoardNums();
 
         for (int i = 0; i < 4; i++) {

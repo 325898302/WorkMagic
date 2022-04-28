@@ -1,11 +1,11 @@
 package com.example.workmagic;
 
-public class BoardActivity {
+public class Board {
     private int firstNum;
     private int[][] boardNums;
     private boolean isNumInBoard;
 
-    public BoardActivity(int firstNum) {
+    public Board(int firstNum) {
         this.firstNum = firstNum;
         this.boardNums = new int[4][4];
         this.isNumInBoard = false;
