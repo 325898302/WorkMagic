@@ -51,13 +51,13 @@ public class MagicCardActivity extends AppCompatActivity implements View.OnClick
             int j = 0;
 
 
-            ((TextView) row.findViewById(R.id.column1)).setText("  " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column1)).setText(String.format("%10d", boardNums[i][j]));
             j++;
-            ((TextView) row.findViewById(R.id.column2)).setText("   " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column2)).setText( String.format("%10d", boardNums[i][j]));
             j++;
-            ((TextView) row.findViewById(R.id.column3)).setText("   " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column3)).setText(String.format("%10d", boardNums[i][j]));
             j++;
-            ((TextView) row.findViewById(R.id.column4)).setText("   " + boardNums[i][j]);
+            ((TextView) row.findViewById(R.id.column4)).setText(String.format("%10d", boardNums[i][j]));
             tbl.addView(row);
         }
         tbl.requestLayout();
