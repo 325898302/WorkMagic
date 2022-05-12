@@ -30,7 +30,8 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     Button left;
     Button right;
     Button btPhone;
-    Button GifPhone;
+    Button btGifPhone;
+    Button btGifWhat;
     ImageView imAnim;
     Button btWhatsApp;
     Dialog dialogDetails;
@@ -64,12 +65,14 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         left.setOnClickListener(this);
         btWhatsApp = findViewById(R.id.btWhatsApp);
         btWhatsApp.setOnClickListener(this);
+        btGifWhat = findViewById(R.id.btGifWhat);
+        btGifWhat.setOnClickListener(this);
         right = findViewById(R.id.right);
         right.setOnClickListener(this);
         btPhone = findViewById(R.id.btPhone);
         btPhone.setOnClickListener(this);
-        GifPhone = findViewById(R.id.GifPhone);
-        GifPhone.setOnClickListener(this);
+        btGifPhone = findViewById(R.id.btGifPhone);
+        btGifPhone.setOnClickListener(this);
         tv1 = findViewById(R.id.tv1);
     }
 
@@ -190,8 +193,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if (v == GifPhone) {
-
+        if (v == btGifPhone) {
             Intent intent = new Intent();
             Uri data = Uri.parse("tel:" + "0503407888");
             intent.setData(data);
@@ -201,12 +203,28 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
                 return;
             }
             startActivity(intent);
+        }
 
+        if (v == btPhone) {
+            Intent intent = new Intent();
+            Uri data = Uri.parse("tel:" + "0503407888");
+            intent.setData(data);
+            intent.setAction(Intent.ACTION_DIAL);
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(AboutShowActivity.this, new String[] {Manifest.permission.CALL_PHONE}, REQUEST_CALL_PHONE_PERMISSION);
+                return;
+            }
+            startActivity(intent);
+        }
+
+        if (v == btGifWhat) {
+            createLoginDialog1();
         }
 
         if (v == btWhatsApp) {
             createLoginDialog1();
         }
+
 
         if (v == left) {
             out = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);

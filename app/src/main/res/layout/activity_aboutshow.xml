@@ -220,14 +220,14 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/GifPhone"
+                        android:id="@+id/btGifPhone"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:background="@drawable/phone" />
 
                     <pl.droidsonroids.gif.GifImageView
-                        android:id="@+id/imPhone"
+                        android:id="@+id/GifPhone"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_gravity="center"
@@ -246,7 +246,7 @@
                     android:shadowRadius="40"
                     android:text="0503407888"
                     android:textSize="16dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -257,12 +257,24 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <pl.droidsonroids.gif.GifImageView
-                    android:id="@+id/im"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/whatsapp" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btGifWhat"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/phone" />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/im"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/whatsapp" />
+                </RelativeLayout>
 
                 <Button
                     android:id="@+id/btWhatsApp"

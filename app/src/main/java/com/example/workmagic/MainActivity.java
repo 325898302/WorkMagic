@@ -3,6 +3,7 @@ package com.example.workmagic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView imageFire;
     Button btDoMeMagic, btCardMagic, btAboutShow;
     Animation anim2;
+    BroadBattery battery;
+    IntentFilter intentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btCardMagic.setOnClickListener(this);
         btAboutShow = findViewById(R.id.bAboutShow);
         btAboutShow.setOnClickListener(this);
+        intentFilter= new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
+        battery= new BroadBattery();
+
 
         Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageFire);
 
@@ -47,6 +54,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editor.putBoolean("music", true);
             editor.apply();
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(battery);
     }
 
 

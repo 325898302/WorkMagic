@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkMagic"
         >
+
+        <receiver android:name=".BroadBattery" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_BATTERY_LOW" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".NumDiscoveryActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".MagicCardActivity"
@@ -38,6 +45,8 @@
             android:name=".AboutShowActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
+
+
 
         <meta-data
             android:name="preloaded_fonts"

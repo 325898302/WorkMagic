@@ -3,7 +3,9 @@ package com.example.workmagic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
 
     Dialog dialogExp;
     Button btExp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +37,8 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
         bRedBlack.setOnClickListener(this);
         bForeTold = findViewById(R.id.bFanCard);
         bForeTold.setOnClickListener(this);
-
         createLoginDialog2();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
