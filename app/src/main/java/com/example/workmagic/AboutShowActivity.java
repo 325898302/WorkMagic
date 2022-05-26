@@ -27,18 +27,12 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
     ViewFlipper viewFlipper;
     TextView tv1;
-    Button left;
-    Button right;
-    Button btPhone;
-    Button btGifPhone;
-    Button btGifWhat;
+    Button left, right, btPhone, btGifPhone, btWhatsApp, btGifWhat, btFace, btGifFace, btSMS;
     ImageView imAnim;
-    Button btWhatsApp;
     Dialog dialogDetails;
     EditText edName, edWhy, edSum, edAge, edCity, edPhone;
     ScrollView sv;
     final int REQUEST_CALL_PHONE_PERMISSION = 50;
-    Button btSMS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +67,16 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         btPhone.setOnClickListener(this);
         btGifPhone = findViewById(R.id.btGifPhone);
         btGifPhone.setOnClickListener(this);
+        btGifFace = findViewById(R.id.btGifFace);
+        btGifFace.setOnClickListener(this);
+        btFace = findViewById(R.id.btFacebook);
+        btFace.setOnClickListener(this);
         tv1 = findViewById(R.id.tv1);
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {  // בודק את המצב של המוזיקה
         getMenuInflater().inflate(R.menu.menu_nomain, menu);
         SharedPreferences sp;
         MenuItem i = menu.findItem(R.id.music);
@@ -174,7 +172,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
         if (v == btSMS) {
 
-            st1 = edName.getText().toString();
+            st1 = edName.getText().toString();  // קבלת המידע מהמשתמש
             st2 = edWhy.getText().toString();
             st3 = edSum.getText().toString();
             st4 = edAge.getText().toString();
@@ -208,6 +206,12 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         if (v == btGifWhat || v == btWhatsApp) {
             createLoginDialog1();
         }
+
+        if (v == btGifFace || v == btFace) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/profile.php?id=100080461939055"));
+            startActivity(browserIntent);
+        }
+
 
 
         if (v == left) {

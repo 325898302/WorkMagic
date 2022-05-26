@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class LearnMagicActivity extends AppCompatActivity implements View.OnClickListener {
     Button bFanCard, bEightRed, bKingQuin, bFourCard, bRedBlack, bForeTold;
@@ -35,7 +36,7 @@ public class LearnMagicActivity extends AppCompatActivity implements View.OnClic
         bFourCard.setOnClickListener(this);
         bRedBlack = findViewById(R.id.bRedBlack);
         bRedBlack.setOnClickListener(this);
-        bForeTold = findViewById(R.id.bFanCard);
+        bForeTold = findViewById(R.id.bForeTold);
         bForeTold.setOnClickListener(this);
         createLoginDialog2();
     }
