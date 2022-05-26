@@ -193,7 +193,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if (v == btGifPhone) {
+        if (v == btGifPhone || v == btPhone) {
             Intent intent = new Intent();
             Uri data = Uri.parse("tel:" + "0503407888");
             intent.setData(data);
@@ -205,23 +205,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
             startActivity(intent);
         }
 
-        if (v == btPhone) {
-            Intent intent = new Intent();
-            Uri data = Uri.parse("tel:" + "0503407888");
-            intent.setData(data);
-            intent.setAction(Intent.ACTION_DIAL);
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(AboutShowActivity.this, new String[] {Manifest.permission.CALL_PHONE}, REQUEST_CALL_PHONE_PERMISSION);
-                return;
-            }
-            startActivity(intent);
-        }
-
-        if (v == btGifWhat) {
-            createLoginDialog1();
-        }
-
-        if (v == btWhatsApp) {
+        if (v == btGifWhat || v == btWhatsApp) {
             createLoginDialog1();
         }
 
