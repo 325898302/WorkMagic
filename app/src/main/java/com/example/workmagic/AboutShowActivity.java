@@ -27,12 +27,17 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
     ViewFlipper viewFlipper;
     TextView tv1;
-    Button left, right, btPhone, btGifPhone, btWhatsApp, btGifWhat, btFace, btGifFace, btSMS;
+    Button left;
+    Button right;
+    Button btPhone;
+    Button GifPhone; // sdhgggggggggggggg
     ImageView imAnim;
+    Button btWhatsApp;
     Dialog dialogDetails;
     EditText edName, edWhy, edSum, edAge, edCity, edPhone;
     ScrollView sv;
     final int REQUEST_CALL_PHONE_PERMISSION = 50;
+    Button btSMS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,24 +64,18 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         left.setOnClickListener(this);
         btWhatsApp = findViewById(R.id.btWhatsApp);
         btWhatsApp.setOnClickListener(this);
-        btGifWhat = findViewById(R.id.btGifWhat);
-        btGifWhat.setOnClickListener(this);
         right = findViewById(R.id.right);
         right.setOnClickListener(this);
         btPhone = findViewById(R.id.btPhone);
         btPhone.setOnClickListener(this);
-        btGifPhone = findViewById(R.id.btGifPhone);
-        btGifPhone.setOnClickListener(this);
-        btGifFace = findViewById(R.id.btGifFace);
-        btGifFace.setOnClickListener(this);
-        btFace = findViewById(R.id.btFacebook);
-        btFace.setOnClickListener(this);
+        GifPhone = findViewById(R.id.GifPhone); // rtherrrrrrrrrrrrrrrrrrrtnjh
+        GifPhone.setOnClickListener(this);
         tv1 = findViewById(R.id.tv1);
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {  // בודק את המצב של המוזיקה
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_nomain, menu);
         SharedPreferences sp;
         MenuItem i = menu.findItem(R.id.music);
@@ -172,7 +171,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
         if (v == btSMS) {
 
-            st1 = edName.getText().toString();  // קבלת המידע מהמשתמש
+            st1 = edName.getText().toString();
             st2 = edWhy.getText().toString();
             st3 = edSum.getText().toString();
             st4 = edAge.getText().toString();
@@ -191,7 +190,8 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if (v == btGifPhone || v == btPhone) {
+        if (v == GifPhone) { // fhdynftmjynnnnnnnnnnnnnf
+
             Intent intent = new Intent();
             Uri data = Uri.parse("tel:" + "0503407888");
             intent.setData(data);
@@ -201,18 +201,12 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
                 return;
             }
             startActivity(intent);
+
         }
 
-        if (v == btGifWhat || v == btWhatsApp) {
+        if (v == btWhatsApp) {
             createLoginDialog1();
         }
-
-        if (v == btGifFace || v == btFace) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/profile.php?id=100080461939055"));
-            startActivity(browserIntent);
-        }
-
-
 
         if (v == left) {
             out = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
