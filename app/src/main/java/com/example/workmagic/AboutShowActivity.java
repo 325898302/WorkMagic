@@ -26,13 +26,15 @@ import android.widget.ViewFlipper;
 public class AboutShowActivity extends AppCompatActivity implements View.OnClickListener {
 
     ViewFlipper viewFlipper;
-    TextView tv1;
     Button left;
     Button right;
+    Button btGifPhone;
     Button btPhone;
-    Button GifPhone; // sdhgggggggggggggg
+    Button btGifFace;
+    Button btFace;
     ImageView imAnim;
-    Button btWhatsApp;
+    Button btGifWhat;
+    Button btWhat;
     Dialog dialogDetails;
     EditText edName, edWhy, edSum, edAge, edCity, edPhone;
     ScrollView sv;
@@ -62,15 +64,21 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         viewFlipper = findViewById(R.id.viewFlipper);
         left = findViewById(R.id.left);
         left.setOnClickListener(this);
-        btWhatsApp = findViewById(R.id.btWhatsApp);
-        btWhatsApp.setOnClickListener(this);
+        btGifWhat = findViewById(R.id.btGifWhat);
+        btGifWhat.setOnClickListener(this);
+        btWhat= findViewById(R.id.btWhat);
+        btWhat.setOnClickListener(this);
+        btFace = findViewById(R.id.btFace);
+        btFace.setOnClickListener(this);
+        btGifFace = findViewById(R.id.btGifFace);
+        btGifFace.setOnClickListener(this);
         right = findViewById(R.id.right);
         right.setOnClickListener(this);
         btPhone = findViewById(R.id.btPhone);
         btPhone.setOnClickListener(this);
-        GifPhone = findViewById(R.id.GifPhone); // rtherrrrrrrrrrrrrrrrrrrtnjh
-        GifPhone.setOnClickListener(this);
-        tv1 = findViewById(R.id.tv1);
+        btGifPhone = findViewById(R.id.btGifPhone);
+        btGifPhone.setOnClickListener(this);
+
     }
 
 
@@ -190,7 +198,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if (v == GifPhone) { // fhdynftmjynnnnnnnnnnnnnf
+        if (v == btPhone || v==btGifPhone) {
 
             Intent intent = new Intent();
             Uri data = Uri.parse("tel:" + "0503407888");
@@ -204,7 +212,9 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
         }
 
-        if (v == btWhatsApp) {
+        if
+
+        if (v == btWhat || v==btGifWhat) {
             createLoginDialog1();
         }
 

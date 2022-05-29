@@ -277,7 +277,7 @@
                 </RelativeLayout>
 
                 <Button
-                    android:id="@+id/btWhatsApp"
+                    android:id="@+id/btWhat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -319,7 +319,7 @@
                 </RelativeLayout>
 
                 <Button
-                    android:id="@+id/btFacebook"
+                    android:id="@+id/btFace"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
