@@ -19,12 +19,12 @@ public class BroadBattery extends BroadcastReceiver {
         percentage = intent.getIntExtra("level", 0);
         if (time == 0 && percentage < 11) {
             firPer = percentage;
-            Toast.makeText(context, "החושים שלי קולטים שהבטריה שלך נחלשת!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "החושים שלי קולטים שהבטריה שלך נחלשת!", Toast.LENGTH_LONG).show();
             time++;
 
         }
         if (time == 1 && percentage < firPer) {
-            Toast.makeText(context, "מהר לשלוח אלי את הפרטים על המופע שלך!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "מהר לשלוח אלי את הפרטים על המופע שלך!", Toast.LENGTH_LONG).show();
             time++;
         }
     }

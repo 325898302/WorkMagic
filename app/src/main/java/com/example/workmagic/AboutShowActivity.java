@@ -19,7 +19,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -98,7 +97,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         return true;
     }
 
-    public void createLoginDialog1() {
+    public void createDialogWhatsapp() {
         dialogDetails = new Dialog(this);
         dialogDetails.setContentView(R.layout.dialog_whatsapp);
         dialogDetails.setCancelable(true);
@@ -212,10 +211,13 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
         }
 
-        if
+        if(v==btFace || v==btGifFace){
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/profile.php?id=100080461939055"));
+            startActivity(browserIntent);
+        }
 
         if (v == btWhat || v==btGifWhat) {
-            createLoginDialog1();
+            createDialogWhatsapp();
         }
 
         if (v == left) {
