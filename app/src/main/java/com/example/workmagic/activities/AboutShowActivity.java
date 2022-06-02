@@ -1,4 +1,4 @@
-package com.example.workmagic;
+package com.example.workmagic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -21,6 +21,9 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
+
+import com.example.workmagic.R;
+import com.example.workmagic.other.ServiceMusic;
 
 public class AboutShowActivity extends AppCompatActivity implements View.OnClickListener {
 

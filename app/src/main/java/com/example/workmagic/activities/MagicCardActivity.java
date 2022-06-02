@@ -1,4 +1,4 @@
-package com.example.workmagic;
+package com.example.workmagic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.example.workmagic.other.Board;
+import com.example.workmagic.R;
+import com.example.workmagic.other.ServiceMusic;
 
 public class MagicCardActivity extends AppCompatActivity implements View.OnClickListener {
     int firstNum;

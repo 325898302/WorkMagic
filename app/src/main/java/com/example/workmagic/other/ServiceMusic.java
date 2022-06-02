@@ -1,4 +1,4 @@
-package com.example.workmagic;
+package com.example.workmagic.other;
 
 
 import android.app.Service;
@@ -7,6 +7,8 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 
 import androidx.annotation.Nullable;
+
+import com.example.workmagic.R;
 
 public class ServiceMusic extends Service {
 

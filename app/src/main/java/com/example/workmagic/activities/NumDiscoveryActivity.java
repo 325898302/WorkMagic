@@ -1,18 +1,15 @@
-package com.example.workmagic;
+package com.example.workmagic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.workmagic.R;
 
 public class NumDiscoveryActivity extends AppCompatActivity {
 
@@ -31,6 +28,7 @@ public class NumDiscoveryActivity extends AppCompatActivity {
         numOfUse.setText("" + selectNum);
 
         Glide.with(getApplicationContext()).load(R.drawable.zikok).into(imGifzikok);
+        Toast.makeText(this, "חכה שהמסך יעבור אוטומטית", Toast.LENGTH_SHORT).show();
 
         Thread closeActivity = new Thread(new Runnable() {
             @Override

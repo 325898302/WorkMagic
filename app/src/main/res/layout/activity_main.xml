@@ -7,7 +7,7 @@
     android:background="#000000"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
  
     <ImageView
         android:id="@+id/imageFire"
@@ -23,6 +23,7 @@
         android:layout_height="90dp"
         android:backgroundTint="#AA2C22"
         android:text="איתן \n תעשה לי קסם"
+        android:fontFamily="@font/miriam_libre"
         android:textColor="#E4D00E"
         android:textSize="20dp"
         android:textStyle="bold" />

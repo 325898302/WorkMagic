@@ -1,4 +1,4 @@
-package com.example.workmagic;
+package com.example.workmagic.other;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.widget.Toast;
 public class BroadBattery extends BroadcastReceiver {
     int time=0;
     int firPer=0;
-    BroadBattery() {
+    public BroadBattery() {
 
     }
 

@@ -1,11 +1,9 @@
-package com.example.workmagic;
+package com.example.workmagic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.content.BroadcastReceiver;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,7 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.workmagic.R;
+import com.example.workmagic.other.ServiceMusic;
 
 public class LearnMagicActivity extends AppCompatActivity implements View.OnClickListener {
     Button bFanCard, bEightRed, bKingQuin, bFourCard, bRedBlack, bForeTold;

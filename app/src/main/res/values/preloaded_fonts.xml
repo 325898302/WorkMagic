@@ -2,6 +2,9 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aladin</item>
+        <item>@font/bad_script</item>
         <item>@font/faster_one</item>
+        <item>@font/miriam_libre</item>
+        <item>@font/rubik_mono_one</item>
     </array>
 </resources>

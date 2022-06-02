@@ -6,7 +6,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".AboutShowActivity">
+    tools:context=".activities.AboutShowActivity">
 
 
     <LinearLayout
@@ -48,13 +48,34 @@
                 android:layout_marginTop="20dp"
                 android:src="@drawable/balloon2" />
 
-
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="11dp"
+                android:src="@drawable/face" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/imFire"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:src="@drawable/circlefire" />
+
+        </RelativeLayout>
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:gravity="center"
             android:text="קוסם ליום הולדת ומסיבות \n שיהפוך את החגיגה לבלתי נשכחת! \n מופע הכולל קטעים מרהיבים \n עם שיתוף הקהל במופע. \n
              מופע שיגרום לילדכם להיות כוכב האירוע. \n איתן הקוסם מבטיח להעניק דקות ארוכות \n של כיף וקסמים שמתאימים במיוחד לגיל המסיבה \n כדי ליצור חוויה חד פעמית."

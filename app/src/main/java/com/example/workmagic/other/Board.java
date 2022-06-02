@@ -1,11 +1,12 @@
-package com.example.workmagic;
+package com.example.workmagic.other;
 
 public class Board {
-    private int firstNum;
-    private int[][] boardNums;
-    private boolean isNumInBoard;
+    private int firstNum; // המספר הראשון בלוח
+    private int[][] boardNums;  // המערך שנכנס לתוך הלוח כדי לאחסן בו מספרים
+    private boolean isNumInBoard;  // משתנה שבודק אם המספר של המשתמש נמצא בלוח
 
-    public Board(int firstNum) {
+
+    public Board(int firstNum) {  // פעולה בונה שמקבלת את המספר הראשון שבלוח
         this.firstNum = firstNum;
         this.boardNums = new int[4][4];
         this.isNumInBoard = false;

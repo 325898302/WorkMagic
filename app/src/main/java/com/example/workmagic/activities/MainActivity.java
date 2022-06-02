@@ -1,13 +1,11 @@
-package com.example.workmagic;
+package com.example.workmagic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,9 +13,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.workmagic.other.BroadBattery;
+import com.example.workmagic.R;
+import com.example.workmagic.other.ServiceMusic;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
