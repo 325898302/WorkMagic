@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @Override
+    @Override  // בטריה
     protected void onStart() {
         super.onStart();
         registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
