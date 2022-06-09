@@ -17,7 +17,6 @@ import com.example.workmagic.other.ServiceMusic;
 
 public class LearnMagicActivity extends AppCompatActivity implements View.OnClickListener {
     Button bFanCard, bEightRed, bKingQuin, bFourCard, bRedBlack, bForeTold;
-
     Dialog dialogExp;
     Button btExp;
 

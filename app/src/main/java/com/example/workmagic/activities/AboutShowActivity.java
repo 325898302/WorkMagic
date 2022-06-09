@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.workmagic.R;
+import com.example.workmagic.other.BroadBattery;
 import com.example.workmagic.other.ServiceMusic;
 
 public class AboutShowActivity extends AppCompatActivity implements View.OnClickListener {
@@ -42,6 +44,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
     ScrollView sv;
     final int REQUEST_CALL_PHONE_PERMISSION = 50;
     Button btSMS;
+    BroadBattery battery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +83,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         btPhone.setOnClickListener(this);
         btGifPhone = findViewById(R.id.btGifPhone);
         btGifPhone.setOnClickListener(this);
+        battery= new BroadBattery();
 
     }
 
@@ -99,6 +103,21 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
         i.setVisible(false);
         return true;
     }
+
+
+    @Override  // בטריה
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(battery);
+    }
+
+
 
     public void createDialogWhatsapp() {
         dialogDetails = new Dialog(this);
