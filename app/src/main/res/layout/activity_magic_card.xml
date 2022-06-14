@@ -12,20 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="100dp"
-        android:text="האם המספר שלך"
+        android:text="האם המספר שלך \n מופיע פה?"
         android:textColor="#E18907"
         android:textSize="30dp" />
 
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="מופיע פה?"
-        android:textColor="#E18907"
-        android:textSize="30dp" />
 
     <TableLayout
         android:id="@+id/tbl"
