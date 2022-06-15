@@ -90,7 +90,7 @@ public class AboutShowActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_nomain, menu);
+        getMenuInflater().inflate(R.menu.menu_main_keher_music, menu);
         SharedPreferences sp;
         MenuItem i = menu.findItem(R.id.music);
         sp = getSharedPreferences("sound", 0);
