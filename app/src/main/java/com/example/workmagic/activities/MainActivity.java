@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.workmagic.other.BroadBattery;
 import com.example.workmagic.R;
 import com.example.workmagic.other.ServiceMusic;
 
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_kesher_music, menu);
         SharedPreferences sp;
         MenuItem i = menu.findItem(R.id.music);
         sp = getSharedPreferences("sound", 0);

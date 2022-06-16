@@ -9,52 +9,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="40dp"
-        android:text="במסך יש שם של הסרטון"
+        android:text= "      במסך יש שם של הסרטון \n (מוקף בעיגול) \n ומתחתיו נמצאת תמונה \n להמחשת הסרטון, \n
+עליך ללחוץ על שם הסרטון \n ועל ידי זה תעבור לצפות בסרטון"
         android:textColor="@color/black"
         android:textSize="18dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="(מוקף בעיגול)"
-        android:textColor="@color/black"
-        android:textSize="18dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="ומתחתיו נמצאת תמונה"
-        android:textColor="@color/black"
-        android:textSize="18dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="להמחשת הסרטון,"
-        android:textColor="@color/black"
-        android:textSize="18dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="2dp"
-        android:text="עליך ללחוץ על שם הסרטון"
-        android:textColor="@color/black"
-        android:textSize="18dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="2dp"
-        android:text="ועל ידי זה תעבור לצפות בסרטון"
-        android:textColor="@color/black"
-        android:textSize="18dp"/>
 
 
     <ImageView
