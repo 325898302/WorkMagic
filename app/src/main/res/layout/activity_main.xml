@@ -30,7 +30,7 @@
 
     
         <Button
-            android:id="@+id/bCardMagic"
+            android:id="@+id/bVidioMagic"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"

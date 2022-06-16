@@ -21,27 +21,15 @@ import com.example.workmagic.other.ServiceMusic;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView imageFire;
-    Button btDoMeMagic, btCardMagic, btAboutShow;
-    Animation anim2;
+    Button btDoMeMagic, btVidioMagic, btAboutShow;
     IntentFilter intentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageFire = findViewById(R.id.imageFire);
-        anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2);
-        btDoMeMagic = findViewById(R.id.bDoMeMagic);
-        btDoMeMagic.setOnClickListener(this);
-        btCardMagic = findViewById(R.id.bCardMagic);
-        btCardMagic.setOnClickListener(this);
-        btAboutShow = findViewById(R.id.bAboutShow);
-        btAboutShow.setOnClickListener(this);
-        intentFilter= new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
-
-
-        Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageFire);
+        inIt();
+        Glide.with(getApplicationContext()).load(R.drawable.fire2).into(imageFire);    // צורת הפעלת gif
 
         if(getIntent().getExtras() == null || !getIntent().getExtras().getBoolean("app")) {
             SharedPreferences sp;
@@ -51,6 +39,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editor.putBoolean("music", true);
             editor.apply();
         }
+    }
+
+    private void inIt(){
+        imageFire = findViewById(R.id.imageFire);
+        btDoMeMagic = findViewById(R.id.bDoMeMagic);
+        btDoMeMagic.setOnClickListener(this);
+        btVidioMagic = findViewById(R.id.bVidioMagic);
+        btVidioMagic.setOnClickListener(this);
+        btAboutShow = findViewById(R.id.bAboutShow);
+        btAboutShow.setOnClickListener(this);
+        intentFilter= new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
     }
 
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, MakeMagicActivity.class);
             startActivity(intent);
         }
-        if (v == btCardMagic) {
+        if (v == btVidioMagic) {
             Intent intent = new Intent(MainActivity.this, LearnMagicActivity.class);
             startActivity(intent);
         }
